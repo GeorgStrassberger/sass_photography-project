@@ -6,6 +6,7 @@
 
 html {
 	font-size: 100%;
+	font-family: 'Jost', sans-serif;
 }
 
 .container {
@@ -50,16 +51,24 @@ html {
 	padding: 0.5rem 0.25rem 0.25rem 0.25rem;
 	color: white;
 	text-decoration: none;
-
+	text-shadow: 0 0 0.5rem black;
 }
 
 .navigation__list-item-link:hover {
 	border-bottom: 0.2rem solid rgb(0, 225, 156);
 }
 
+.navigation__list-item--menu .navigation__list-item-link {
+	margin-top: 0.4rem;
+}
+
 .navigation__list-item--menu .navigation__list-item-link:hover {
 	border-bottom: none;
 	color: rgb(200, 200, 200);
+}
+
+.navigation__list-item-link--logo {
+	margin-top: 0.9rem;
 }
 
 .navigation__list-item-link--logo:hover {

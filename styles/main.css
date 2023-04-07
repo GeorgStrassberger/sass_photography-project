@@ -9,17 +9,44 @@ html {
 	font-family: 'Jost', sans-serif;
 }
 
+/** Breakpoints */
+
+/** 1200px oder schmaler */
+@media (max-width: 75em) {}
+
+/** 992px oder schmaler */
+@media (max-width: 62em) {}
+
+/** 768px oder schmaler */
+@media (max-width: 48em) {}
+
+/** 576px oder schmaler */
+@media (max-width: 36em) {}
+
 .container {
 	width: 75rem;
-	margin: 0 auto;
+	margin: 0px auto;
 }
 
 .header {
 	height: 40rem;
+	min-height: calc(13rem + 32vw);
 	position: relative;
-	top: 0;
 	overflow: hidden;
+}
 
+.header__slope {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 10vw;
+	z-index: 1;
+
+	background-image: linear-gradient(-5.71deg, white 49.9%, transparent 50.1%);
+	background-repeat: no-repeat;
+	background-position: center 100%;
+	background-size: 100vw 10vw;
 }
 
 .header__container {
@@ -27,37 +54,27 @@ html {
 }
 
 .header::before {
-	content: '';
+	content: "";
 	position: absolute;
-	top: 0;
-	bottom: -12rem;
 	width: 100vw;
-	background-image: url('../assets/images/A_HeaderMountain02.jpg');
+	top: 0;
+	bottom: -9rem;
+
+	background-image: url("../assets/images/bg-mountains.jpg");
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	background-size: 100% auto;
 }
 
-.header__slope {
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 0rem;
-	z-index: 1;
-	height: 10vw;
-	background-image: linear-gradient(-5.71deg, white 49.5%, transparent 50.5%);
-	background-repeat: no-repeat;
-	background-position: center 100%;
-	background-size: 100vw 10vw;
-}
-
 .header::after {
-	content: '';
+	content: "";
 	position: absolute;
-	bottom: -12rem;
-	height: 26vw;
+	bottom: -9rem;
+
 	width: 100vw;
-	background-image: url('../assets/images/A_HeaderMountain01.png');
+	height: 33vw;
+
+	background-image: url("../assets/images/bg-mountains.webp");
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	background-size: 100% auto;
@@ -72,8 +89,8 @@ html {
 }
 
 .navigation__list-item {
-	display: block;
 	list-style-type: none;
+	display: block;
 	float: left;
 }
 
@@ -83,16 +100,18 @@ html {
 }
 
 .navigation__list-item-link {
-	display: block;
-	margin: 2rem 2rem 0 2rem;
-	padding: 0.5rem 0.25rem 0.25rem 0.25rem;
 	color: white;
 	text-decoration: none;
+	padding: 0.5rem 0.25rem 0.25rem 0.25rem;
+	margin-top: 2rem;
+	margin-left: 2rem;
+	margin-right: 2rem;
+	display: block;
 	text-shadow: 0 0 0.5rem black;
 }
 
 .navigation__list-item-link:hover {
-	border-bottom: 0.2rem solid rgb(0, 225, 156);
+	border-bottom: 0.15rem solid rgb(0, 226, 156);
 }
 
 .navigation__list-item--menu .navigation__list-item-link {
@@ -116,6 +135,9 @@ html {
 .navigation__list-item-logo {
 	width: 4rem;
 	height: 4rem;
+}
+
+.navigation__list-item-logo {
 	fill: currentColor;
 }
 
@@ -125,22 +147,22 @@ html {
 
 .header__heading-main {
 	padding-top: 5rem;
-	text-transform: uppercase;
-	color: white;
+	line-height: 92%;
 	font-size: 7rem;
 	text-align: center;
-	line-height: 92%;
+	color: white;
+	text-transform: uppercase;
 	text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
 }
 
 .header__heading-sub {
-	position: relative;
-	margin: 1rem;
-	text-transform: uppercase;
-	color: white;
+	margin-top: 1rem;
 	font-size: 1.5rem;
-	text-align: center;
 	letter-spacing: 0.25rem;
-	text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+	text-align: center;
+	color: white;
+	text-transform: uppercase;
+	text-shadow: 0 0 0.5rem black;
 	z-index: 1;
+	position: relative;
 }

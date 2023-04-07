@@ -81,3 +81,27 @@ html {
 	height: 4rem;
 	fill: currentColor;
 }
+
+.header__heading-container {
+	clear: both;
+}
+
+.header__heading-main {
+	padding-top: 5rem;
+	text-transform: uppercase;
+	color: white;
+	font-size: 7rem;
+	text-align: center;
+	line-height: 92%;
+	text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.header__heading-sub {
+	margin: 1rem;
+	text-transform: uppercase;
+	color: white;
+	font-size: 1.5rem;
+	text-align: center;
+	letter-spacing: 0.25rem;
+	text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+}

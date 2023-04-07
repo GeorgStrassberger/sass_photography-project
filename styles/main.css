@@ -16,32 +16,47 @@ html {
 
 .header {
 	height: 40rem;
-	background-image: linear-gradient(-5.71deg, white 49.5%, transparent 50.5%);
-	background-repeat: no-repeat;
-	background-position: center 100%;
-	background-size: 100vw 10vw;
+	position: relative;
+	top: 0;
+	overflow: hidden;
+
 }
 
 .header__container {
 	position: relative;
 }
 
-.header__background {
-	height: 40rem;
+.header::before {
+	content: '';
 	position: absolute;
 	top: 0;
-	width: 100%;
+	bottom: -12rem;
+	width: 100vw;
 	background-image: url('../assets/images/A_HeaderMountain02.jpg');
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	background-size: 100% auto;
 }
 
-.header__mountains {
-	height: 40rem;
+.header__slope {
 	position: absolute;
-	top: 0;
-	width: 100%;
+	left: 0;
+	right: 0;
+	bottom: 0rem;
+	z-index: 1;
+	height: 10vw;
+	background-image: linear-gradient(-5.71deg, white 49.5%, transparent 50.5%);
+	background-repeat: no-repeat;
+	background-position: center 100%;
+	background-size: 100vw 10vw;
+}
+
+.header::after {
+	content: '';
+	position: absolute;
+	bottom: -12rem;
+	height: 26vw;
+	width: 100vw;
 	background-image: url('../assets/images/A_HeaderMountain01.png');
 	background-repeat: no-repeat;
 	background-position: center bottom;
@@ -119,6 +134,7 @@ html {
 }
 
 .header__heading-sub {
+	position: relative;
 	margin: 1rem;
 	text-transform: uppercase;
 	color: white;
@@ -126,4 +142,5 @@ html {
 	text-align: center;
 	letter-spacing: 0.25rem;
 	text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+	z-index: 1;
 }

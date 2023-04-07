@@ -1,0 +1,20 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+.header {
+	height: 40rem;
+	background-image: linear-gradient(-5.71deg,
+			white 49.5%,
+			transparent 50.5%),
+		url("../assets/images/A_HeaderMountain02.png");
+	background-repeat: no-repeat, no-repeat;
+	background-position: center 100%, center center;
+	background-size: 100vw 10vw, cover;
+}

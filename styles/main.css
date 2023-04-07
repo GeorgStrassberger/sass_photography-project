@@ -22,8 +22,15 @@ html {
 	background-size: 100vw 10vw;
 }
 
+.header__container {
+	position: relative;
+}
+
 .header__background {
 	height: 40rem;
+	position: absolute;
+	top: 0;
+	width: 100%;
 	background-image: url('../assets/images/A_HeaderMountain02.jpg');
 	background-repeat: no-repeat;
 	background-position: center bottom;
@@ -32,6 +39,9 @@ html {
 
 .header__mountains {
 	height: 40rem;
+	position: absolute;
+	top: 0;
+	width: 100%;
 	background-image: url('../assets/images/A_HeaderMountain01.png');
 	background-repeat: no-repeat;
 	background-position: center bottom;

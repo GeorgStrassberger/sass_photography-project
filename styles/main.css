@@ -30,20 +30,25 @@ html {
 }
 
 .navigation__list-item {
-	list-style-type: none;
 	display: block;
+	list-style-type: none;
 }
 
-.navigarion__list-item-link {
-	color: white;
-	text-decoration: none;
-	padding: 0.5rem 0.25rem 0.25rem 0.25rem;
+.navigation__list-item-link {
 	display: block;
 	margin: 2rem 2rem 0 2rem;
-
+	padding: 0.5rem 0.25rem 0.25rem 0.25rem;
+	color: white;
+	text-decoration: none;
 
 }
 
-.navigarion__list-item-link:hover {
+.navigation__list-item-link:hover {
 	border-bottom: 0.2rem solid rgb(0, 225, 156);
+	opacity: 0.75;
+}
+
+.navigation__list-item-link--logo {
+	width: 4rem;
+	height: 4rem;
 }

@@ -1,0 +1,154 @@
+/** 1200px oder schmaler */
+.header {
+	height: 35rem;
+	min-height: calc(13rem + 32vw);
+	position: relative;
+	overflow: hidden;
+}
+
+@media (max-width: 75em) {
+	.header {
+		height: calc(18rem + 32vw);
+	}
+}
+
+.header__slope {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 10vw;
+	z-index: 1;
+
+	background-image: linear-gradient(-5.71deg, white 49.9%, transparent 50.1%);
+	background-repeat: no-repeat;
+	background-position: center 100%;
+	background-size: 100vw 10vw;
+}
+
+.header__container {
+	position: relative;
+}
+
+.header::before {
+	content: "";
+	position: absolute;
+	width: 100vw;
+	top: 0;
+	bottom: -9rem;
+
+	background-image: url("../assets/images/bg-mountains.jpg");
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	background-size: 100% auto;
+}
+
+.header::after {
+	content: "";
+	position: absolute;
+	bottom: -9rem;
+
+	/* 2000 pixel breit <=> 100vw */
+	/* ~660 pixel hoch <=> 33vw */
+	width: 100vw;
+	height: 33vw;
+
+	background-image: url("../assets/images/bg-mountains.webp");
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	background-size: 100% auto;
+}
+
+/** 1200px oder schmaler */
+@media (max-width: 75em) {
+	.header::before {
+		bottom: -4rem;
+	}
+
+	.header::after {
+		bottom: -4rem;
+	}
+}
+
+@media (max-width: 62em) {
+	.header::before {
+		bottom: -1rem;
+	}
+
+	.header::after {
+		bottom: -1rem;
+	}
+}
+
+@media (max-width: 36em) {
+	.header::before {
+		background-size: cover;
+	}
+
+	.header::after {
+		display: none;
+	}
+}
+
+.header__heading-container {
+	clear: both;
+}
+
+.header__heading-main {
+	font-weight: 700;
+	padding-top: 5rem;
+	line-height: 92%;
+	font-size: 7rem;
+	text-align: center;
+	color: white;
+	text-transform: uppercase;
+	text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+
+	animation-name: header__heading-main-font-weight;
+	animation-delay: 0.75s;
+	animation-duration: 2s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: both;
+}
+
+@keyframes header__heading-main-font-weight {
+	0% {
+		opacity: 0;
+		font-weight: 100;
+	}
+
+	100% {
+		opacity: 1;
+		font-weight: 700;
+	}
+}
+
+@media (max-width: 62em) {
+	.header__heading-main {
+		font-size: 5rem;
+	}
+}
+
+@media (max-width: 48em) {
+	.header__heading-main {
+		font-size: 3rem;
+	}
+}
+
+.header__heading-sub {
+	margin-top: 1rem;
+	font-size: 1.5rem;
+	letter-spacing: 0.25rem;
+	text-align: center;
+	color: white;
+	text-transform: uppercase;
+	text-shadow: 0 0 0.5rem black;
+	z-index: 1;
+	position: relative;
+}
+
+@media (max-width: 48em) {
+	.header__heading-sub {
+		font-size: 1rem;
+	}
+}

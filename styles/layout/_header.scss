@@ -1,13 +1,11 @@
-/** 1200px oder schmaler */
 .header {
 	height: 35rem;
 	min-height: calc(13rem + 32vw);
 	position: relative;
 	overflow: hidden;
-}
 
-@media (max-width: 75em) {
-	.header {
+	/** 1200px oder schmaler */
+	@media (max-width: 75em) {
 		height: calc(18rem + 32vw);
 	}
 }
@@ -30,63 +28,46 @@
 	position: relative;
 }
 
-.header::before {
-	content: "";
-	position: absolute;
-	width: 100vw;
-	top: 0;
-	bottom: -9rem;
-
-	background-image: url("../assets/images/bg-mountains.jpg");
-	background-repeat: no-repeat;
-	background-position: center bottom;
-	background-size: 100% auto;
-}
-
+.header::before,
 .header::after {
 	content: "";
 	position: absolute;
-	bottom: -9rem;
-
-	/* 2000 pixel breit <=> 100vw */
-	/* ~660 pixel hoch <=> 33vw */
 	width: 100vw;
-	height: 33vw;
-
-	background-image: url("../assets/images/bg-mountains.webp");
+	bottom: -9rem;
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	background-size: 100% auto;
-}
 
-/** 1200px oder schmaler */
-@media (max-width: 75em) {
-	.header::before {
+	/** 1200px oder schmaler */
+	@media (max-width: 75em) {
 		bottom: -4rem;
 	}
-
-	.header::after {
-		bottom: -4rem;
-	}
-}
-
-@media (max-width: 62em) {
-	.header::before {
-		bottom: -1rem;
-	}
-
-	.header::after {
+	/** 992px oder schmaler */
+	@media (max-width: 62em) {
 		bottom: -1rem;
 	}
 }
 
-@media (max-width: 36em) {
-	.header::before {
-		background-size: cover;
-	}
+.header::before {
+	top: 0;
+	background-image: url("../assets/images/bg-mountains.jpg");
 
-	.header::after {
-		display: none;
+	@media (max-width: 36em) {
+		.header::before {
+			background-size: cover;
+		}
+	}
+}
+
+.header::after {
+	/* ~660 pixel hoch <=> 33vw */
+	height: 33vw;
+	background-image: url("../assets/images/bg-mountains.webp");
+
+	@media (max-width: 36em) {
+		.header::after {
+			display: none;
+		}
 	}
 }
 
@@ -109,6 +90,14 @@
 	animation-duration: 2s;
 	animation-timing-function: ease-in-out;
 	animation-fill-mode: both;
+	/** 992px oder schmaler */
+	@media (max-width: 62em) {
+		font-size: 5rem;
+	}
+	/** 768px oder schmaler */
+	@media (max-width: 48em) {
+		font-size: 3rem;
+	}
 }
 
 @keyframes header__heading-main-font-weight {
@@ -123,18 +112,6 @@
 	}
 }
 
-@media (max-width: 62em) {
-	.header__heading-main {
-		font-size: 5rem;
-	}
-}
-
-@media (max-width: 48em) {
-	.header__heading-main {
-		font-size: 3rem;
-	}
-}
-
 .header__heading-sub {
 	margin-top: 1rem;
 	font-size: 1.5rem;
@@ -145,10 +122,8 @@
 	text-shadow: 0 0 0.5rem black;
 	z-index: 1;
 	position: relative;
-}
-
-@media (max-width: 48em) {
-	.header__heading-sub {
+	/** 768px oder schmaler */
+	@media (max-width: 48em) {
 		font-size: 1rem;
 	}
 }

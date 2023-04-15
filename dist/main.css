@@ -28,19 +28,19 @@ html {
   margin: 0px auto;
 }
 
-/** 1200px oder schmaler */
 .header {
   height: 35rem;
   min-height: calc(13rem + 32vw);
   position: relative;
   overflow: hidden;
+  /** 1200px oder schmaler */
 }
-
 @media (max-width: 75em) {
   .header {
     height: calc(18rem + 32vw);
   }
 }
+
 .header__slope {
   position: absolute;
   left: 0;
@@ -58,57 +58,52 @@ html {
   position: relative;
 }
 
-.header::before {
-  content: "";
-  position: absolute;
-  width: 100vw;
-  top: 0;
-  bottom: -9rem;
-  background-image: url("../assets/images/bg-mountains.jpg");
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: 100% auto;
-}
-
+.header::before,
 .header::after {
   content: "";
   position: absolute;
-  bottom: -9rem;
-  /* 2000 pixel breit <=> 100vw */
-  /* ~660 pixel hoch <=> 33vw */
   width: 100vw;
-  height: 33vw;
-  background-image: url("../assets/images/bg-mountains.webp");
+  bottom: -9rem;
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 100% auto;
+  /** 1200px oder schmaler */
+  /** 992px oder schmaler */
 }
-
-/** 1200px oder schmaler */
 @media (max-width: 75em) {
-  .header::before {
-    bottom: -4rem;
-  }
+  .header::before,
   .header::after {
     bottom: -4rem;
   }
 }
 @media (max-width: 62em) {
-  .header::before {
-    bottom: -1rem;
-  }
+  .header::before,
   .header::after {
     bottom: -1rem;
   }
 }
+
+.header::before {
+  top: 0;
+  background-image: url("../assets/images/bg-mountains.jpg");
+}
 @media (max-width: 36em) {
-  .header::before {
+  .header::before .header::before {
     background-size: cover;
   }
-  .header::after {
+}
+
+.header::after {
+  /* ~660 pixel hoch <=> 33vw */
+  height: 33vw;
+  background-image: url("../assets/images/bg-mountains.webp");
+}
+@media (max-width: 36em) {
+  .header::after .header::after {
     display: none;
   }
 }
+
 .header__heading-container {
   clear: both;
 }
@@ -127,6 +122,18 @@ html {
   animation-duration: 2s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: both;
+  /** 992px oder schmaler */
+  /** 768px oder schmaler */
+}
+@media (max-width: 62em) {
+  .header__heading-main {
+    font-size: 5rem;
+  }
+}
+@media (max-width: 48em) {
+  .header__heading-main {
+    font-size: 3rem;
+  }
 }
 
 @keyframes header__heading-main-font-weight {
@@ -139,16 +146,6 @@ html {
     font-weight: 700;
   }
 }
-@media (max-width: 62em) {
-  .header__heading-main {
-    font-size: 5rem;
-  }
-}
-@media (max-width: 48em) {
-  .header__heading-main {
-    font-size: 3rem;
-  }
-}
 .header__heading-sub {
   margin-top: 1rem;
   font-size: 1.5rem;
@@ -159,13 +156,14 @@ html {
   text-shadow: 0 0 0.5rem black;
   z-index: 1;
   position: relative;
+  /** 768px oder schmaler */
 }
-
 @media (max-width: 48em) {
   .header__heading-sub {
     font-size: 1rem;
   }
 }
+
 .navigation__list-item {
   list-style-type: none;
   display: block;

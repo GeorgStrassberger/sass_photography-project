@@ -1,0 +1,23 @@
+$color-primary: rgb(0, 226, 156) !default;
+
+/** 1200px oder schmaler */
+$breakpoint-lg: 75em;
+/** 992px oder schmaler */
+
+$breakpoint-md: 62em;
+/** 768px oder schmaler */
+
+$breakpoint-sm: 48em;
+/** 576px oder schmaler */
+
+$breakpoint-xs: 36em;
+
+/** Breakpoints */
+@media (max-width: $breakpoint-lg) {
+}
+@media (max-width: $breakpoint-md) {
+}
+@media (max-width: $breakpoint-sm) {
+}
+@media (max-width: $breakpoint-xs) {
+}

@@ -1,3 +1,5 @@
+@use "../abstracts" as *;
+
 .header {
 	height: 35rem;
 	min-height: calc(13rem + 32vw);
@@ -5,7 +7,7 @@
 	overflow: hidden;
 
 	/** 1200px oder schmaler */
-	@media (max-width: 75em) {
+	@media (max-width: $breakpoint-lg) {
 		height: calc(18rem + 32vw);
 	}
 }
@@ -39,11 +41,11 @@
 	background-size: 100% auto;
 
 	/** 1200px oder schmaler */
-	@media (max-width: 75em) {
+	@media (max-width: $breakpoint-lg) {
 		bottom: -4rem;
 	}
 	/** 992px oder schmaler */
-	@media (max-width: 62em) {
+	@media (max-width: $breakpoint-md) {
 		bottom: -1rem;
 	}
 }
@@ -52,7 +54,7 @@
 	top: 0;
 	background-image: url("../assets/images/bg-mountains.jpg");
 
-	@media (max-width: 36em) {
+	@media (max-width: $breakpoint-xs) {
 		.header::before {
 			background-size: cover;
 		}
@@ -64,7 +66,7 @@
 	height: 33vw;
 	background-image: url("../assets/images/bg-mountains.webp");
 
-	@media (max-width: 36em) {
+	@media (max-width: $breakpoint-xs) {
 		.header::after {
 			display: none;
 		}
@@ -91,11 +93,11 @@
 	animation-timing-function: ease-in-out;
 	animation-fill-mode: both;
 	/** 992px oder schmaler */
-	@media (max-width: 62em) {
+	@media (max-width: $breakpoint-md) {
 		font-size: 5rem;
 	}
 	/** 768px oder schmaler */
-	@media (max-width: 48em) {
+	@media (max-width: $breakpoint-sm) {
 		font-size: 3rem;
 	}
 }
@@ -123,7 +125,7 @@
 	z-index: 1;
 	position: relative;
 	/** 768px oder schmaler */
-	@media (max-width: 48em) {
+	@media (max-width: $breakpoint-sm) {
 		font-size: 1rem;
 	}
 }

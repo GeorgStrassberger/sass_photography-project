@@ -274,23 +274,48 @@ html {
   width: 50%;
   position: absolute;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  box-sizing: content-box;
 }
 .motivation__image--first {
   width: 75%;
-  right: 0;
+  top: 0;
+  left: 25%;
   z-index: 1;
+  top: 0rem;
+  left: 25%;
+}
+.motivation__image--first:hover {
+  top: -0.66rem;
+  left: calc(25% - 0.66rem);
 }
 .motivation__image--second {
   width: 37%;
   top: 10rem;
   left: 10%;
   z-index: 2;
+  top: 10rem;
+  left: 10%;
+}
+.motivation__image--second:hover {
+  top: 9.34rem;
+  left: calc(10% - 0.66rem);
 }
 .motivation__image--third {
   width: 42%;
   top: 5rem;
   left: 40%;
   z-index: 3;
+  top: 5rem;
+  left: 40%;
+}
+.motivation__image--third:hover {
+  top: 4.34rem;
+  left: calc(40% - 0.66rem);
+}
+.motivation__image:hover {
+  border: 0.33rem solid rgb(0, 226, 156);
+  padding: 0.33rem;
+  z-index: 10;
 }
 
 /*# sourceMappingURL=main.css.map */

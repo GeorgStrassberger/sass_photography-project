@@ -242,7 +242,7 @@ html {
 
 .motivation__column-text {
   float: left;
-  width: 33.3%;
+  width: 25%;
 }
 
 .motivation__text-heading {
@@ -259,14 +259,38 @@ html {
   margin-bottom: 0.5rem;
 }
 
+.motivation__text {
+  color: #26464d;
+  margin-top: 0.2rem;
+}
+
 .motivation__column-images {
+  position: relative;
   float: left;
   width: 66.6%;
 }
 
 .motivation__image {
-  max-width: 50%;
-  margin-left: 25%;
+  width: 50%;
+  position: absolute;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+.motivation__image--first {
+  width: 75%;
+  right: 0;
+  z-index: 1;
+}
+.motivation__image--second {
+  width: 37%;
+  top: 10rem;
+  left: 10%;
+  z-index: 2;
+}
+.motivation__image--third {
+  width: 42%;
+  top: 5rem;
+  left: 40%;
+  z-index: 3;
 }
 
 /*# sourceMappingURL=main.css.map */

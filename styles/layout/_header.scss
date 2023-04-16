@@ -36,6 +36,7 @@
 	position: absolute;
 	width: 100vw;
 	bottom: -9rem;
+
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	background-size: 100% auto;
@@ -52,24 +53,20 @@
 
 .header::before {
 	top: 0;
-	background-image: url("../assets/images/bg-mountains.jpg");
+	background-image: url("../../assets/images/pexels-benjamin-suter-3617500.jpg");
 
 	@media (max-width: $breakpoint-xs) {
-		.header::before {
-			background-size: cover;
-		}
+		background-size: cover;
 	}
 }
 
 .header::after {
 	/* ~660 pixel hoch <=> 33vw */
 	height: 33vw;
-	background-image: url("../assets/images/bg-mountains.webp");
+	background-image: url("../../assets/images/pexels-benjamin-suter-3617500-mountains.webp");
 
 	@media (max-width: $breakpoint-xs) {
-		.header::after {
-			display: none;
-		}
+		display: none;
 	}
 }
 

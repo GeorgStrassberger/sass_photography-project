@@ -33,6 +33,8 @@
 
 	.navigation__list-item--menu & {
 		margin-top: 0.4rem;
+		margin-right: 0;
+		padding-right: 0;
 
 		&:hover {
 			border-bottom: none;
@@ -42,6 +44,8 @@
 
 	&--logo {
 		margin-top: 0.9rem;
+		margin-left: 0;
+		padding-left: 0;
 		&:hover {
 			border-bottom: none;
 			color: rgb(200, 200, 200);

@@ -23,16 +23,22 @@ html {
   font-family: "Jost", sans-serif;
 }
 
-.container {
-  max-width: 75rem;
-  margin: 0px auto;
-}
-
 /** 1200px oder schmaler */
 /** 992px oder schmaler */
 /** 768px oder schmaler */
 /** 576px oder schmaler */
 /** Breakpoints */
+.container {
+  max-width: 75rem;
+  padding: 0 2rem;
+  margin: 0px auto;
+}
+@media (max-width: 62em) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
 .header {
   height: 35rem;
   min-height: calc(13rem + 32vw);
@@ -90,10 +96,10 @@ html {
 
 .header::before {
   top: 0;
-  background-image: url("../assets/images/bg-mountains.jpg");
+  background-image: url("../../assets/images/pexels-benjamin-suter-3617500.jpg");
 }
 @media (max-width: 36em) {
-  .header::before .header::before {
+  .header::before {
     background-size: cover;
   }
 }
@@ -101,10 +107,10 @@ html {
 .header::after {
   /* ~660 pixel hoch <=> 33vw */
   height: 33vw;
-  background-image: url("../assets/images/bg-mountains.webp");
+  background-image: url("../../assets/images/pexels-benjamin-suter-3617500-mountains.webp");
 }
 @media (max-width: 36em) {
-  .header::after .header::after {
+  .header::after {
     display: none;
   }
 }
@@ -199,6 +205,8 @@ html {
 }
 .navigation__list-item--menu .navigation__list-item-link {
   margin-top: 0.4rem;
+  margin-right: 0;
+  padding-right: 0;
 }
 .navigation__list-item--menu .navigation__list-item-link:hover {
   border-bottom: none;
@@ -206,6 +214,8 @@ html {
 }
 .navigation__list-item-link--logo {
   margin-top: 0.9rem;
+  margin-left: 0;
+  padding-left: 0;
 }
 .navigation__list-item-link--logo:hover {
   border-bottom: none;
@@ -224,6 +234,39 @@ html {
   vertical-align: middle;
   position: relative;
   top: -0.075em;
+}
+
+.motivation {
+  margin-top: 2rem;
+}
+
+.motivation__column-text {
+  float: left;
+  width: 33.3%;
+}
+
+.motivation__text-heading {
+  margin-top: 4rem;
+  color: #26464d;
+  font-weight: 500;
+}
+.motivation__text-heading::before {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 0.25rem;
+  background-color: #407682;
+  margin-bottom: 0.5rem;
+}
+
+.motivation__column-images {
+  float: left;
+  width: 66.6%;
+}
+
+.motivation__image {
+  max-width: 50%;
+  margin-left: 25%;
 }
 
 /*# sourceMappingURL=main.css.map */

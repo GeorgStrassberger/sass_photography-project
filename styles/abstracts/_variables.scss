@@ -1,4 +1,8 @@
+@use "sass:color";
+
 $color-primary: rgb(0, 226, 156) !default;
+$color-secondary: #26464d !default;
+$color-secondary-light: color.scale($color-secondary, $lightness: 20%) !default;
 
 /** 1200px oder schmaler */
 $breakpoint-lg: 75em;

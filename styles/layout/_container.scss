@@ -1,4 +1,11 @@
+@use "../abstracts" as *;
+
 .container {
 	max-width: 75rem;
+	padding: 0 2rem;
 	margin: 0px auto;
+
+	@media (max-width: $breakpoint-md) {
+		padding: 0 1rem;
+	}
 }

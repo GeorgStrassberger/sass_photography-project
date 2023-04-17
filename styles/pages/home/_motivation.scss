@@ -11,12 +11,27 @@ $-motivation__imgage-hover-border: 0.33rem;
 	float: left;
 	width: 33.33%;
 	padding-right: 4.5rem;
+	padding-top: 4rem;
+
+	@media (max-width: $breakpoint-lg) {
+		padding-right: 3rem;
+	}
+	@media (max-width: $breakpoint-md) {
+		padding-top: 0;
+		padding-right: 0;
+		width: 50%;
+	}
+	@media (max-width: $breakpoint-sm) {
+		width: 80%;
+		float: none;
+		padding-bottom: 3rem;
+	}
 }
 
 .motivation__text-heading {
-	margin-top: 4rem;
 	color: $color-secondary;
 	font-weight: 500;
+	font-size: 2rem;
 
 	&::before {
 		content: "";
@@ -39,6 +54,21 @@ $-motivation__imgage-hover-border: 0.33rem;
 	float: left;
 	width: 66.6%;
 	height: clamp(10rem, calc(35vw + 10rem), 36rem);
+
+	@media (max-width: $breakpoint-md) {
+		width: 50%;
+		height: clamp(10rem, calc(25vw + 10rem), 36rem);
+	}
+	@media (max-width: $breakpoint-sm) {
+		float: none;
+		width: 80%;
+		margin: 0 auto;
+		height: clamp(10rem, calc(40vw + 10rem), 36rem);
+	}
+	@media (max-width: $breakpoint-xs) {
+		width: 90%;
+		height: clamp(10rem, calc(45vw + 10rem), 36rem);
+	}
 }
 
 /**

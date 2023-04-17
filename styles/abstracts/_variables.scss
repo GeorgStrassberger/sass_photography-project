@@ -6,14 +6,14 @@ $color-secondary-light: color.scale($color-secondary, $lightness: 20%) !default;
 
 /** 1200px oder schmaler */
 $breakpoint-lg: 75em;
+
 /** 992px oder schmaler */
-
 $breakpoint-md: 62em;
+
 /** 768px oder schmaler */
-
 $breakpoint-sm: 48em;
-/** 576px oder schmaler */
 
+/** 576px oder schmaler */
 $breakpoint-xs: 36em;
 
 /** Breakpoints */

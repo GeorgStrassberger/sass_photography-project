@@ -249,12 +249,32 @@ html {
   float: left;
   width: 33.33%;
   padding-right: 4.5rem;
+  padding-top: 4rem;
+}
+@media (max-width: 75em) {
+  .motivation__column-text {
+    padding-right: 3rem;
+  }
+}
+@media (max-width: 62em) {
+  .motivation__column-text {
+    padding-top: 0;
+    padding-right: 0;
+    width: 50%;
+  }
+}
+@media (max-width: 48em) {
+  .motivation__column-text {
+    width: 80%;
+    float: none;
+    padding-bottom: 3rem;
+  }
 }
 
 .motivation__text-heading {
-  margin-top: 4rem;
   color: #26464d;
   font-weight: 500;
+  font-size: 2rem;
 }
 .motivation__text-heading::before {
   content: "";
@@ -276,6 +296,26 @@ html {
   float: left;
   width: 66.6%;
   height: clamp(10rem, 35vw + 10rem, 36rem);
+}
+@media (max-width: 62em) {
+  .motivation__column-images {
+    width: 50%;
+    height: clamp(10rem, 25vw + 10rem, 36rem);
+  }
+}
+@media (max-width: 48em) {
+  .motivation__column-images {
+    float: none;
+    width: 80%;
+    margin: 0 auto;
+    height: clamp(10rem, 40vw + 10rem, 36rem);
+  }
+}
+@media (max-width: 36em) {
+  .motivation__column-images {
+    width: 90%;
+    height: clamp(10rem, 45vw + 10rem, 36rem);
+  }
 }
 
 /**

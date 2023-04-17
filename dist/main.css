@@ -243,6 +243,7 @@ html {
 
 .motivation {
   margin-top: 2rem;
+  padding-bottom: 3rem;
 }
 
 .motivation__column-text {
@@ -379,6 +380,21 @@ html {
   border: 0.33rem solid rgb(0, 226, 156);
   padding: 0.33rem;
   z-index: 10;
+}
+
+.tours {
+  background-color: #011820;
+}
+
+.tours__heading {
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  font-size: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 /*# sourceMappingURL=main.css.map */

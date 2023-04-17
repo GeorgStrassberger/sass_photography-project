@@ -3,7 +3,48 @@
 $-tours-background-color: $color-secondary-dark;
 
 .tours {
+	position: relative;
 	background-color: $-tours-background-color;
+	height: 30rem;
+}
+
+%tours__before-and-after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 0;
+	content: "Tame the wild";
+	text-transform: uppercase;
+	color: $-tours-background-color;
+	font-size: 10rem;
+	font-weight: bold;
+	text-align: center;
+	text-shadow: 0 0 2px rgba(255, 255, 255, 0.2);
+}
+@mixin -tours__before-and-after-stroke($color) {
+	@supports (-webkit-text-stroke: 2px #{$color}) or (text-stroke: 2px #{$color}) {
+		.tours::before {
+			-webkit-text-stroke: 2px #{$color};
+			text-stroke: 2px #{$color};
+			text-shadow: none;
+		}
+	}
+}
+.tours::before {
+	@extend %tours__before-and-after;
+
+	@include -tours__before-and-after-stroke(rgba(255, 255, 255, 0.2));
+}
+.tours::after {
+	@extend %tours__before-and-after;
+
+	@include -tours__before-and-after-stroke(transparent);
+}
+
+.tours__container {
+	position: relative;
+	z-index: 1;
 }
 
 .tours__heading {

@@ -1,7 +1,7 @@
 @use "../../abstracts" as *;
 
 $-motivation__image-hover-padding: 0.33rem;
-$-motivation__imgage-hover-border: 033rem;
+$-motivation__imgage-hover-border: 0.33rem;
 
 .motivation {
 	margin-top: 2rem;
@@ -9,7 +9,8 @@ $-motivation__imgage-hover-border: 033rem;
 
 .motivation__column-text {
 	float: left;
-	width: 25%;
+	width: 33.33%;
+	padding-right: 4.5rem;
 }
 
 .motivation__text-heading {
@@ -30,6 +31,7 @@ $-motivation__imgage-hover-border: 033rem;
 .motivation__text {
 	color: $color-secondary;
 	margin-top: 0.2rem;
+	font-size: 1.1rem;
 }
 
 .motivation__column-images {

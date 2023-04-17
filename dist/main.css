@@ -247,7 +247,8 @@ html {
 
 .motivation__column-text {
   float: left;
-  width: 25%;
+  width: 33.33%;
+  padding-right: 4.5rem;
 }
 
 .motivation__text-heading {
@@ -267,6 +268,7 @@ html {
 .motivation__text {
   color: #26464d;
   margin-top: 0.2rem;
+  font-size: 1.1rem;
 }
 
 .motivation__column-images {
@@ -298,9 +300,9 @@ html {
   left: 25%;
 }
 .motivation__image--first:hover {
-  top: -33.33rem;
+  top: -0.66rem;
   left: calc(
-			25% - 33.33rem
+			25% - 0.66rem
 		);
 }
 .motivation__image--second {
@@ -312,9 +314,9 @@ html {
   left: 10%;
 }
 .motivation__image--second:hover {
-  top: -23.33rem;
+  top: 9.34rem;
   left: calc(
-			10% - 33.33rem
+			10% - 0.66rem
 		);
 }
 .motivation__image--third {
@@ -326,15 +328,15 @@ html {
   left: 40%;
 }
 .motivation__image--third:hover {
-  top: -28.33rem;
+  top: 4.34rem;
   left: calc(
-			40% - 33.33rem
+			40% - 0.66rem
 		);
 }
 .motivation__image:hover {
   filter: grayscale(0%);
   transform: scale(1.2);
-  border: 33rem solid rgb(0, 226, 156);
+  border: 0.33rem solid rgb(0, 226, 156);
   padding: 0.33rem;
   z-index: 10;
 }

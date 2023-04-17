@@ -1,5 +1,8 @@
 @use "../../abstracts" as *;
 
+$-motivation__image-hover-padding: 0.33rem;
+$-motivation__imgage-hover-border: 033rem;
+
 .motivation {
 	margin-top: 2rem;
 }
@@ -33,14 +36,25 @@
 	position: relative;
 	float: left;
 	width: 66.6%;
+	height: clamp(10rem, calc(35vw + 10rem), 36rem);
 }
+
+/**
+ * @param $top: Position from top (in rem);
+ * @param $left: Position from left ( in %);
+ */
 @mixin motivation__image-position($top, $left) {
 	top: $top;
 	left: $left;
 
+	$hover-offset: $-motivation__image-hover-padding +
+		$-motivation__imgage-hover-border;
+
 	&:hover {
-		top: $top - 0.66rem;
-		left: calc(#{$left} - 0.66rem);
+		top: $top - $hover-offset; // wird von Sass umgerechnent
+		left: calc(
+			#{$left} - #{$hover-offset}
+		); // wird vom Browser umgerechnent deshalb die #{}
 	}
 }
 .motivation__image {
@@ -48,6 +62,9 @@
 	position: absolute;
 	box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
 	box-sizing: content-box;
+	filter: grayscale(50%);
+	transform: scale(1);
+	transition: filter ease-in-out 175ms, transform ease-in-out 175ms;
 
 	&--first {
 		width: 75%;
@@ -75,9 +92,10 @@
 	}
 
 	&:hover {
-		border: 0.33rem solid $color-primary;
-		padding: 0.33rem;
-
+		filter: grayscale(0%);
+		transform: scale(1.2);
+		border: $-motivation__imgage-hover-border solid $color-primary;
+		padding: $-motivation__image-hover-padding;
 		z-index: 10;
 	}
 }

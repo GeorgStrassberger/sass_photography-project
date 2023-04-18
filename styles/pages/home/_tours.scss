@@ -59,13 +59,26 @@ $-tours-background-color: $color-secondary-dark;
 }
 
 .tours__cards {
+	display: flex;
+}
+.tours__card_img {
+	width: 100%;
 }
 
 .tours__card {
+	width: 20%;
 }
-.tours__card-heading {
+
+.tours__card-icon-container {
 }
 .tours__card-icon {
 	width: 4rem;
 	color: white;
+}
+
+.tours__card-content {
+}
+.tours__card-heading {
+}
+.tours__card-location {
 }

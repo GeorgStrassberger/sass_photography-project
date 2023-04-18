@@ -71,7 +71,23 @@ $-tours-background-color: $color-secondary-dark;
 	overflow: hidden;
 }
 
-.tours__card_img {
+.tours__card-icon-background {
+	background-color: $color-primary;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 3rem;
+
+	transform: translate(calc(-100% + 3rem), 0);
+	transition: transform 1s ease-in-out;
+
+	.tours__card:hover & {
+		transform: translate(0, 0);
+	}
+}
+
+.tours__card-img {
 	width: 100%;
 	position: absolute;
 	top: 0;
@@ -79,14 +95,10 @@ $-tours-background-color: $color-secondary-dark;
 	filter: brightness(80%);
 }
 
-.tours__card-icon-container {
-	background-color: $color-primary;
+.tours__card-icon {
 	position: absolute;
 	top: 0;
 	left: 0;
-}
-
-.tours__card-icon {
 	display: block;
 	width: 3rem;
 	color: white;

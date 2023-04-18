@@ -494,10 +494,19 @@ html {
   filter: brightness(80%);
 }
 
-.tours__card-icon {
+.tours__card-icon-container {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  transform: translate(0, 0);
+  transition: transform 1s ease-in-out;
+}
+.tours__card:hover .tours__card-icon-container {
+  transform: translate(calc(50% - 1.5rem), 0);
+}
+
+.tours__card-icon {
   display: block;
   width: 3rem;
   color: white;

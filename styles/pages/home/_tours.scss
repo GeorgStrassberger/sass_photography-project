@@ -1,8 +1,8 @@
 @use "../../abstracts" as *;
 
 $-tours-background-color: $color-secondary-dark;
-
 $-tours-icon-size: 3rem;
+$-tours-animation-duration: 0.25s;
 
 .tours {
 	position: relative;
@@ -71,6 +71,12 @@ $-tours-icon-size: 3rem;
 	height: 21rem;
 	position: relative;
 	overflow: hidden;
+	transform: scale(1);
+	transition: transform $-tours-animation-duration ease-in-out;
+	&:hover {
+		transform: scale(1.1);
+		box-shadow: 0 0 0.25rem black;
+	}
 }
 
 .tours__card-icon-background {
@@ -80,9 +86,10 @@ $-tours-icon-size: 3rem;
 	left: 0;
 	width: 100%;
 	height: $-tours-icon-size;
+	box-shadow: 0 0 0.125rem black;
 
 	transform: translate(calc(-100% + #{$-tours-icon-size}), 0);
-	transition: transform 1s ease-in-out;
+	transition: transform $-tours-animation-duration ease-in-out;
 
 	.tours__card:hover & {
 		transform: translate(0, 0);
@@ -103,7 +110,7 @@ $-tours-icon-size: 3rem;
 	width: 100%;
 	transform: translate(0, 0);
 
-	transition: transform 1s ease-in-out;
+	transition: transform $-tours-animation-duration ease-in-out;
 
 	.tours__card:hover & {
 		transform: translate(calc(50% - #{$-tours-icon-size / 2}), 0);
@@ -129,6 +136,13 @@ $-tours-icon-size: 3rem;
 		transparent 0%,
 		rgba(0, 0, 0, 0.25) 20%
 	);
+
+	transform: translate(0, calc(100% - 7.5rem));
+	transition: transform $-tours-animation-duration ease-in-out;
+
+	.tours__card:hover & {
+		transform: translate(0, 0);
+	}
 }
 
 .tours__card-heading {

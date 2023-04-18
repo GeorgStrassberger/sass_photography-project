@@ -398,7 +398,7 @@ html {
 .tours {
   position: relative;
   background-color: #011820;
-  padding-bottom: 8.5rem;
+  padding-bottom: 9.5rem;
 }
 
 .tours::after, .tours::before {
@@ -578,6 +578,48 @@ html {
   background-position-y: top;
   background-size: 100% 0.125rem;
   background-repeat: no-repeat;
+}
+
+.story {
+  position: relative;
+  overflow: hidden;
+}
+
+.story__video {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+}
+
+.story__video-colorize {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(38, 70, 77, 0.5);
+}
+
+.story__container {
+  position: relative;
+  z-index: 2;
+  max-width: 75rem;
+  padding: 0 2rem;
+  margin: 0px auto;
+}
+.story__container::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+@media (max-width: 62em) {
+  .story__container {
+    padding: 0 1rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

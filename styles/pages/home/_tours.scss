@@ -7,7 +7,7 @@ $-tours-animation-duration: 0.25s;
 .tours {
 	position: relative;
 	background-color: $-tours-background-color;
-	padding-bottom: 8.5rem;
+	padding-bottom: 9.5rem;
 }
 
 %tours__before-and-after {
@@ -26,6 +26,7 @@ $-tours-animation-duration: 0.25s;
 	overflow: hidden;
 	white-space: nowrap;
 }
+
 @mixin -tours__before-and-after-stroke($color) {
 	@supports (-webkit-text-stroke: 2px #{$color}) or (text-stroke: 2px #{$color}) {
 		.tours::before {
@@ -35,11 +36,13 @@ $-tours-animation-duration: 0.25s;
 		}
 	}
 }
+
 .tours::before {
 	@extend %tours__before-and-after;
 
 	@include -tours__before-and-after-stroke(rgba(255, 255, 255, 0.2));
 }
+
 .tours::after {
 	@extend %tours__before-and-after;
 
@@ -100,7 +103,6 @@ $-tours-animation-duration: 0.25s;
 	width: 100%;
 	height: $-tours-icon-size;
 	box-shadow: 0 0 0.125rem black;
-
 	transform: translate(calc(-100% + #{$-tours-icon-size}), 0);
 	transition: transform $-tours-animation-duration ease-in-out;
 
@@ -122,7 +124,6 @@ $-tours-animation-duration: 0.25s;
 	left: 0;
 	width: 100%;
 	transform: translate(0, 0);
-
 	transition: transform $-tours-animation-duration ease-in-out;
 
 	.tours__card:hover & {
@@ -150,7 +151,6 @@ $-tours-animation-duration: 0.25s;
 		transparent 0%,
 		rgba(0, 0, 0, 0.25) 20%
 	);
-
 	transform: translate(0, calc(100% - 7.5rem));
 	transition: transform $-tours-animation-duration ease-in-out;
 

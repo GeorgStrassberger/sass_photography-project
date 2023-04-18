@@ -398,7 +398,7 @@ html {
 .tours {
   position: relative;
   background-color: #011820;
-  padding-bottom: 5rem;
+  padding-bottom: 8.5rem;
 }
 
 .tours::after, .tours::before {
@@ -410,10 +410,12 @@ html {
   content: "Tame the wild";
   text-transform: uppercase;
   color: #011820;
-  font-size: 10rem;
+  font-size: min(11.1111111111vw, 10rem);
   font-weight: bold;
   text-align: center;
-  text-shadow: 0 0 2px rgba(255, 255, 255, 0.2);
+  text-shadow: 0 0 2px white;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 @supports (-webkit-text-stroke: 2px rgba(255, 255, 255, 0.2)) or (text-stroke: 2px rgba(255, 255, 255, 0.2)) {
@@ -458,24 +460,31 @@ html {
   font-weight: 500;
   font-size: 2rem;
   padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-bottom: 1rem;
 }
 
 .tours__cards {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .tours__card {
-  width: 20%;
+  flex: 0 0 14.2rem;
+  margin-top: 3rem;
   height: 21rem;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 0 1rem transparent;
   transform: scale(1);
-  transition: transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out, z-index 0.25s linear;
+  z-index: 0;
 }
 .tours__card:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 0.25rem black;
+  box-shadow: 0 0 1rem black;
+  transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out, z-index 0s linear;
+  z-index: 1000;
 }
 
 .tours__card-icon-background {
@@ -517,6 +526,7 @@ html {
   display: block;
   width: 3rem;
   color: white;
+  filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.5));
 }
 
 .tours__card-content {
@@ -538,6 +548,9 @@ html {
 .tours__card-heading {
   font-size: 1.1rem;
   margin-bottom: 0.25rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .tours__card-location {
@@ -550,6 +563,12 @@ html {
 
 .tours__card-location-icon {
   font-size: 1.25rem;
+}
+
+.tours__card-location-text {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .tours_card-desc {

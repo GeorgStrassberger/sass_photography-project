@@ -7,7 +7,7 @@ $-tours-animation-duration: 0.25s;
 .tours {
 	position: relative;
 	background-color: $-tours-background-color;
-	padding-bottom: 5rem;
+	padding-bottom: 8.5rem;
 }
 
 %tours__before-and-after {
@@ -19,10 +19,12 @@ $-tours-animation-duration: 0.25s;
 	content: "Tame the wild";
 	text-transform: uppercase;
 	color: $-tours-background-color;
-	font-size: 10rem;
+	font-size: min(calc(100vw / 9), 10rem);
 	font-weight: bold;
 	text-align: center;
-	text-shadow: 0 0 2px rgba(255, 255, 255, 0.2);
+	text-shadow: 0 0 2px white;
+	overflow: hidden;
+	white-space: nowrap;
 }
 @mixin -tours__before-and-after-stroke($color) {
 	@supports (-webkit-text-stroke: 2px #{$color}) or (text-stroke: 2px #{$color}) {
@@ -59,23 +61,34 @@ $-tours-animation-duration: 0.25s;
 	font-weight: 500;
 	font-size: 2rem;
 	padding-top: 4rem;
-	padding-bottom: 4rem;
+	padding-bottom: 1rem;
 }
 
 .tours__cards {
 	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
 }
 
 .tours__card {
-	width: 20%;
+	flex: 0 0 (71rem / 5);
+	margin-top: 3rem;
 	height: 21rem;
 	position: relative;
 	overflow: hidden;
+	box-shadow: 0 0 1rem transparent;
 	transform: scale(1);
-	transition: transform $-tours-animation-duration ease-in-out;
+	transition: transform $-tours-animation-duration ease-in-out,
+		box-shadow $-tours-animation-duration ease-in-out,
+		z-index $-tours-animation-duration linear;
+	z-index: 0;
+
 	&:hover {
 		transform: scale(1.1);
-		box-shadow: 0 0 0.25rem black;
+		box-shadow: 0 0 1rem black;
+		transition: transform $-tours-animation-duration ease-in-out,
+			box-shadow $-tours-animation-duration ease-in-out, z-index 0s linear;
+		z-index: 1000;
 	}
 }
 
@@ -121,6 +134,7 @@ $-tours-animation-duration: 0.25s;
 	display: block;
 	width: $-tours-icon-size;
 	color: white;
+	filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.5));
 }
 
 .tours__card-content {
@@ -148,6 +162,9 @@ $-tours-animation-duration: 0.25s;
 .tours__card-heading {
 	font-size: 1.1rem;
 	margin-bottom: 0.25rem;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 .tours__card-location {
 	display: flex;
@@ -158,6 +175,12 @@ $-tours-animation-duration: 0.25s;
 }
 .tours__card-location-icon {
 	font-size: 1.25rem;
+}
+
+.tours__card-location-text {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 .tours_card-desc {

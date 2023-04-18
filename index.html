@@ -10,6 +10,7 @@
 
 	<!-- Bug fix: https://stackoverflow.com/questions/14389566/stop-css-transition-from-firing-on-page-load  -->
 	<script> </script>
+	<script src="./scripts/main.js" async></script>
 </head>
 
 <body>
@@ -368,6 +369,7 @@
 	<!-- Story -->
 	<section class="story">
 		<video class="story__video" autoplay muted loop>
+			<source type="video/webm" src="./assets/videos/flug.webm">
 			<source type="video/mp4" src="./assets/videos/flug.mp4">
 			Dies Video kann in Ihrem Browser nicht wiedergegeben werden.
 		</video>
@@ -387,7 +389,7 @@
 				</p>
 			</div>
 			<div class="story__book">
-				<a href="#">Book now</a>
+				<a class="button button--white" href="#">Book now</a>
 			</div>
 		</div>
 	</section>

@@ -13,6 +13,13 @@
 	right: 0;
 	left: 0;
 	width: 100%;
+
+	@supports (object-fit: cover) and (object-position: center center) {
+		height: 100%;
+
+		object-fit: cover;
+		object-position: center center;
+	}
 }
 
 .story__video-colorize {
@@ -31,4 +38,36 @@
 	z-index: 2;
 
 	@include make-container();
+}
+
+.story__heading {
+	color: white;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 0.1em;
+	font-weight: 500;
+	font-size: 2rem;
+	padding-block: 4rem;
+	text-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.5);
+}
+
+.story__desc {
+	max-width: 40rem;
+	margin: 0 auto;
+	color: white;
+	column-count: 2;
+	column-gap: 4rem;
+	column-rule: 0.125rem solid rgba(255, 255, 255, 0.5);
+	text-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.5);
+	text-align: justify;
+
+	@media (max-width: $breakpoint-sm) {
+		column-count: 1;
+		text-align: left;
+	}
+}
+
+.story__book {
+	text-align: center;
+	padding: 4rem 0;
 }

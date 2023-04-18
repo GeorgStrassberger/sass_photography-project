@@ -1,0 +1,27 @@
+@use "../abstracts" as *;
+@use "sass:color";
+
+.button {
+	display: inline-block;
+	border: 0.125rem solid currentColor;
+	border-radius: 1000000rem; // viel zugroß angeben um alle skallierungen abzurunden
+	color: $color-primary;
+	text-decoration: none;
+	padding: 1rem 6rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 1.2rem;
+
+	&:hover {
+		color: color.scale($color-primary, $lightness: 20%);
+	}
+}
+
+.button--white {
+	color: white;
+	text-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.5);
+	&:hover {
+		color: rgb(230, 230, 230);
+	}
+}

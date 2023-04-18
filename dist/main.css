@@ -398,7 +398,7 @@ html {
 .tours {
   position: relative;
   background-color: #011820;
-  height: 30rem;
+  padding-bottom: 5rem;
 }
 
 .tours::after, .tours::before {
@@ -465,17 +465,69 @@ html {
   display: flex;
 }
 
-.tours__card_img {
-  width: 100%;
-}
-
 .tours__card {
   width: 20%;
+  height: 21rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.tours__card_img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: brightness(80%);
+}
+
+.tours__card-icon-container {
+  background-color: rgb(0, 226, 156);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .tours__card-icon {
-  width: 4rem;
+  display: block;
+  width: 3rem;
   color: white;
+}
+
+.tours__card-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 3rem 1rem 0 1rem;
+  color: white;
+  text-shadow: 0 0 0.125rem black;
+  background-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.25) 20%);
+}
+
+.tours__card-heading {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.tours__card-location {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+}
+
+.tours__card-location-icon {
+  font-size: 1.25rem;
+}
+
+.tours_card-desc {
+  font-size: 0.8;
+  padding: 0.9rem 0;
+  background-image: linear-gradient(90deg, rgb(0, 226, 156) 60%, transparent 60%);
+  background-position-y: top;
+  background-size: 100% 0.125rem;
+  background-repeat: no-repeat;
 }
 
 /*# sourceMappingURL=main.css.map */

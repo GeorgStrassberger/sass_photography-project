@@ -45,6 +45,8 @@ $-tours-background-color: $color-secondary-dark;
 .tours__container {
 	position: relative;
 	z-index: 1;
+
+	@include make-container();
 }
 
 .tours__heading {

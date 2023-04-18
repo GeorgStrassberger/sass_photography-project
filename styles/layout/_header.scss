@@ -28,6 +28,7 @@
 
 .header__container {
 	position: relative;
+	@include make-container();
 }
 
 .header::before,

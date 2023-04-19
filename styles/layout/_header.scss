@@ -20,7 +20,11 @@
 	height: 10vw;
 	z-index: 1;
 
-	background-image: linear-gradient(-5.71deg, white 49.9%, transparent 50.1%);
+	background-image: linear-gradient(
+		-$slope-incline,
+		white 49.9%,
+		transparent 50.1%
+	);
 	background-repeat: no-repeat;
 	background-position: center 100%;
 	background-size: 100vw 10vw;

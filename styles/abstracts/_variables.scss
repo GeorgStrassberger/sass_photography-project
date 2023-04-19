@@ -1,10 +1,13 @@
 @use "sass:color";
+@use "sass:math";
 
 $color-primary: rgb(0, 226, 156) !default;
 $color-secondary: #26464d !default;
 
 $color-secondary-dark: #011820 !default;
 $color-secondary-light: color.scale($color-secondary, $lightness: 20%) !default;
+
+$slope-incline: math.asin(0.1); //0.1 = 10%
 
 /** 1200px oder schmaler */
 $breakpoint-lg: 75em;

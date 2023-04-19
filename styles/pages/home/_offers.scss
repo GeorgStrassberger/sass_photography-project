@@ -2,6 +2,7 @@
 @use "sass:math";
 @use "sass:color";
 
+$-half-pixel-width: math.div(1rem, 32);
 $-offers-card-border-width: math.div(1rem, 16);
 $-offers-card-border-color: rgba(0, 0, 0, 0.15);
 $-offers-card-margin: 0.66rem;
@@ -21,9 +22,9 @@ $-offers-card-margin: 0.66rem;
 .offers__card {
 	flex: 1 0 0rem;
 	margin: 0 $-offers-card-margin;
-	padding: 0 0 1.5rem 0;
+	padding: 0 0 2rem 0;
 	background-color: white;
-	box-shadow: 0.5rem 0.5rem 2rem black;
+	box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.5);
 	border-top: $-offers-card-border-width solid $-offers-card-border-color;
 	border-right: $-offers-card-border-width solid$-offers-card-border-color;
 	border-left: $-offers-card-border-width solid $-offers-card-border-color;
@@ -87,4 +88,68 @@ $-offers-card-margin: 0.66rem;
 	width: 100%;
 	mix-blend-mode: multiply;
 	filter: grayscale(100%);
+}
+
+.offers__content {
+	padding-inline: 1.5rem;
+}
+
+.offers__content-heading {
+	color: $color-secondary;
+	font-size: 1.75rem;
+	font-weight: 500;
+}
+
+.offers__content-subheading {
+	color: $color-primary;
+	font-size: 1rem;
+}
+
+.offers__content-info {
+	display: flex;
+	margin-top: 1rem;
+	border-top: 1px solid rgba(0, 0, 0, 0.15);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+	background-image: linear-gradient(
+		90deg,
+		transparent calc(50% - #{$-half-pixel-width}),
+		rgba(0, 0, 0, 0.15) calc(50% - #{$-half-pixel-width}),
+		rgba(0, 0, 0, 0.15) calc(50% + #{$-half-pixel-width}),
+		transparent calc(50% + #{$-half-pixel-width})
+	);
+	background-repeat: no-repeat;
+	background-size: 100% 75%;
+	background-position: center center;
+}
+
+%offers__content-info-column {
+	flex: 1 1 50%;
+	color: $color-secondary;
+	text-align: center;
+	padding-block: 1rem;
+}
+
+.offers__content-info-duration {
+	@extend %offers__content-info-column;
+}
+.offers__content-info-level {
+	@extend %offers__content-info-column;
+}
+
+.offers__content-info--text {
+	padding-left: 0.25rem;
+}
+
+.offers__content-price-container {
+	padding-top: 0.75rem;
+	color: $color-secondary;
+	font-size: 1rem;
+}
+
+.offers__content-price {
+	display: block;
+	color: $color-primary;
+	font-weight: 500;
+	font-size: 2rem;
+	line-height: 0.9em;
 }

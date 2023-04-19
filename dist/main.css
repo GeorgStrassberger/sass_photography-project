@@ -686,4 +686,42 @@ html {
   padding: 4rem 0;
 }
 
+.offers {
+  background-color: rgb(239, 241, 239);
+  min-height: 5rem;
+}
+
+.offers__container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-block: 4rem;
+  margin-left: -0.66rem;
+  margin-right: -0.66rem;
+}
+
+.offers__card {
+  flex: 1 0 0rem;
+  margin: 0 0.66rem;
+  padding: 2rem 1rem;
+  background-color: white;
+  box-shadow: 0.5rem 0.5rem 2rem black;
+  border-top: 0.0625rem solid #e2e2e2;
+  border-right: 0.0625rem solid #e2e2e2;
+  border-left: 0.0625rem solid #e2e2e2;
+  position: relative;
+}
+
+.offers__card::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -0.0625rem;
+  right: -0.0625rem;
+  bottom: 0;
+  height: 0.75rem;
+  background-color: rgb(0, 226, 156);
+  border-right: 0.0625rem solid #5fcaa9;
+  border-left: 0.0625rem solid #5fcaa9;
+}
+
 /*# sourceMappingURL=main.css.map */

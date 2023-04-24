@@ -913,4 +913,18 @@ html {
   backface-visibility: hidden;
 }
 
+.offers__card-contaienr--3d {
+  perspective: 50rem;
+}
+.offers__card-contaienr--3d .offers__card-hover {
+  display: none;
+}
+.offers__card-contaienr--3d .offers__card {
+  transition: transform 0.1s ease-in-out;
+  transform: rotateX(calc((var(--mouse-y, 0.5) - 0.5) * -20deg)) rotateY(calc((var(--mouse-x, 0.5) - 0.5) * 20deg));
+}
+.offers__card-contaienr--3d:hover {
+  transition: transform 0.5s linear;
+}
+
 /*# sourceMappingURL=main.css.map */

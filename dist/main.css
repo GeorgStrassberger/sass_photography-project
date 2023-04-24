@@ -971,4 +971,48 @@ html {
   font-size: 2rem;
 }
 
+.gallery__list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 14.2rem 14.2rem;
+}
+@media (max-width: 75em) {
+  .gallery__list {
+    grid-template-rows: 12.78rem 12.78rem;
+  }
+}
+@media (max-width: 62em) {
+  .gallery__list {
+    grid-template-rows: 11.36rem 11.36rem;
+  }
+}
+@media (max-width: 48em) {
+  .gallery__list {
+    grid-template-rows: 7.1rem 7.1rem;
+  }
+}
+@media (max-width: 36em) {
+  .gallery__list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 14.2rem);
+  }
+}
+
+.gallery__list-item {
+  display: block;
+}
+.gallery__list-item--first {
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  grid-row-start: 1;
+  grid-row-end: span 2;
+}
+
+.gallery__list-item-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /*# sourceMappingURL=main.css.map */

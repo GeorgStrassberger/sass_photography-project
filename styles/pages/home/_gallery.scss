@@ -1,5 +1,6 @@
 @use "../../abstracts" as *;
 @use "sass:color";
+@use "sass:math";
 
 .gallery__container {
 	@include make-container();
@@ -16,4 +17,41 @@
 }
 
 .gallery__list {
+	$column-size: math.div(71rem, 5);
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: $column-size $column-size;
+
+	@media (max-width: $breakpoint-lg) {
+		grid-template-rows: calc($column-size * 0.9) calc($column-size * 0.9);
+	}
+	@media (max-width: $breakpoint-md) {
+		grid-template-rows: calc($column-size * 0.8) calc($column-size * 0.8);
+	}
+	@media (max-width: $breakpoint-sm) {
+		grid-template-rows: calc($column-size * 0.5) calc($column-size * 0.5);
+	}
+	@media (max-width: $breakpoint-xs) {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(5, $column-size);
+	}
+}
+
+.gallery__list-item {
+	display: block;
+
+	&--first {
+		grid-column-start: 1;
+		grid-column-end: span 2;
+
+		grid-row-start: 1;
+		grid-row-end: span 2;
+	}
+}
+
+.gallery__list-item-image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }

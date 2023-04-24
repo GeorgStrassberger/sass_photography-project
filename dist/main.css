@@ -945,4 +945,30 @@ html {
   filter: blur(0.5rem);
 }
 
+.gallery__container {
+  max-width: 75rem;
+  padding: 0 2rem;
+  margin: 0px auto;
+}
+.gallery__container::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+@media (max-width: 62em) {
+  .gallery__container {
+    padding: 0 1rem;
+  }
+}
+
+.gallery__heading {
+  color: #26464d;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-align: center;
+  padding-block: 4rem;
+  font-size: 2rem;
+}
+
 /*# sourceMappingURL=main.css.map */

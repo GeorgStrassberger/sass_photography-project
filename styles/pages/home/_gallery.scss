@@ -1,0 +1,19 @@
+@use "../../abstracts" as *;
+@use "sass:color";
+
+.gallery__container {
+	@include make-container();
+}
+
+.gallery__heading {
+	color: $color-secondary;
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	text-align: center;
+	padding-block: 4rem;
+	font-size: 2rem;
+}
+
+.gallery__list {
+}

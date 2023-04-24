@@ -2,6 +2,10 @@
 @use "sass:color";
 @use "sass:math";
 
+.gallery {
+	padding-bottom: 3rem;
+}
+
 .gallery__container {
 	@include make-container();
 }
@@ -38,13 +42,84 @@
 }
 
 .gallery__list-cb-toggle {
+	animation: gallery__list-cb-toggle-show ease-in-out 0s 1;
+
 	.gallery__cb-toggle:not(:checked) ~ & {
+		// display: none;
+		opacity: 0;
+	}
+}
+
+@keyframes gallery__list-cb-toggle-show {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.gallery__cb-toggle {
+	display: none;
+}
+
+.gallery__more-button-container {
+	padding-top: 3rem;
+	text-align: center;
+
+	.gallery__cb-toggle:checked ~ & {
 		display: none;
 	}
 }
 
 .gallery__list-item {
+	$animation-duration: 0.2s;
+
 	display: block;
+	position: relative;
+	z-index: 0;
+	box-shadow: 0 0 1rem rgba(0, 0, 0, 0);
+	filter: contrast(1.1) brightness(1.15) saturate(1.1);
+	transform: scale(1);
+	transition: filter $animation-duration ease-in-out,
+		box-shadow $animation-duration ease-in-out,
+		transform $animation-duration ease-in-out,
+		z-index $animation-duration linear;
+
+	&::before {
+		display: block;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		opacity: 1;
+		transition: opacity $animation-duration ease-in-out;
+
+		background: radial-gradient(
+			circle closest-corner,
+			transparent 0,
+			rgba(175, 105, 24, 0.4) 100%
+		);
+		content: "";
+		mix-blend-mode: multiply;
+	}
+
+	&:hover {
+		box-shadow: 0 0 1rem rgba(0, 0, 0, 1);
+		transform: scale(1.1);
+		z-index: 1000;
+		transition: filter $animation-duration ease-in-out,
+			box-shadow $animation-duration ease-in-out,
+			transform $animation-duration ease-in-out, z-index 0s linear;
+
+		filter: contrast(1) brightness(1) saturate(1);
+
+		&::before {
+			opacity: 0;
+		}
+	}
 
 	&--first {
 		grid-column-start: 1;
@@ -60,6 +135,11 @@
 
 		grid-row-start: 1;
 		grid-row-end: span 2;
+
+		@media (max-width: $breakpoint-xs) {
+			grid-column-start: 1;
+			grid-column-end: span 2;
+		}
 	}
 }
 
@@ -68,4 +148,14 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+}
+
+.gallery__list-item-bg-image {
+	display: block;
+	width: 100%;
+	height: 100%;
+
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }

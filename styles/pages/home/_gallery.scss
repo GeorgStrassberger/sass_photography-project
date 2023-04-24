@@ -37,12 +37,26 @@
 	}
 }
 
+.gallery__list-cb-toggle {
+	.gallery__cb-toggle:not(:checked) ~ & {
+		display: none;
+	}
+}
+
 .gallery__list-item {
 	display: block;
 
 	&--first {
 		grid-column-start: 1;
 		grid-column-end: span 2;
+
+		grid-row-start: 1;
+		grid-row-end: span 2;
+	}
+
+	&--last {
+		grid-column-start: 4;
+		grid-column-end: span 6;
 
 		grid-row-start: 1;
 		grid-row-end: span 2;

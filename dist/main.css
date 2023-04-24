@@ -998,12 +998,22 @@ html {
   }
 }
 
+.gallery__cb-toggle:not(:checked) ~ .gallery__list-cb-toggle {
+  display: none;
+}
+
 .gallery__list-item {
   display: block;
 }
 .gallery__list-item--first {
   grid-column-start: 1;
   grid-column-end: span 2;
+  grid-row-start: 1;
+  grid-row-end: span 2;
+}
+.gallery__list-item--last {
+  grid-column-start: 4;
+  grid-column-end: span 6;
   grid-row-start: 1;
   grid-row-end: span 2;
 }

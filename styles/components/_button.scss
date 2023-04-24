@@ -8,6 +8,7 @@
 	color: $color-primary;
 	text-decoration: none;
 	padding: 1rem 6rem;
+	text-align: center;
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: 1.2rem;
@@ -24,4 +25,19 @@
 	&:hover {
 		color: rgba(230, 230, 230, 0.7);
 	}
+}
+
+.button--secondary {
+	color: white;
+	background-color: $color-secondary;
+	border: 0.125rem solid $color-secondary;
+	&:hover {
+		color: white;
+		background-color: $color-secondary-dark;
+		border: 0.125rem solid $color-secondary-dark;
+	}
+}
+
+.button--slim {
+	padding-inline: 2rem;
 }

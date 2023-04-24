@@ -22,22 +22,15 @@ $-width-md: math.div(100%, 2);
 	margin-left: -$-offers-card-margin;
 	margin-right: -$-offers-card-margin;
 }
-.offers__card {
+
+.offers__card-container {
 	$-width: math.div(100%, 3);
 
-	position: relative;
 	width: calc(#{$-width} - #{($-offers-card-margin * 2 + 0.001rem)});
-	min-width: 16rem;
 	margin-top: ($-offers-card-margin * 2);
 	margin-right: $-offers-card-margin;
 	margin-bottom: 0;
 	margin-left: $-offers-card-margin;
-	padding: 0 0 2rem 0;
-	background-color: white;
-	box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.5);
-	border-top: $-offers-card-border-width solid $-offers-card-border-color;
-	border-right: $-offers-card-border-width solid$-offers-card-border-color;
-	border-left: $-offers-card-border-width solid $-offers-card-border-color;
 
 	@media (max-width: $breakpoint-md) {
 		width: calc(#{$-width-md} - #{($-offers-card-margin * 2 + 0.001rem)});
@@ -50,7 +43,20 @@ $-width-md: math.div(100%, 2);
 	}
 }
 
-.offers__card::after {
+.offers__card {
+	position: relative;
+	// min-width: 16rem;
+	box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.5);
+}
+
+.offers__card-primary {
+	padding: 0 0 2rem 0;
+	background-color: white;
+	border-top: $-offers-card-border-width solid $-offers-card-border-color;
+	border-right: $-offers-card-border-width solid$-offers-card-border-color;
+	border-left: $-offers-card-border-width solid $-offers-card-border-color;
+}
+.offers__card-primary::after {
 	content: "";
 	display: block;
 	position: absolute;
@@ -218,5 +224,33 @@ $-width-md: math.div(100%, 2);
 	.offers__card:hover & {
 		transition: opacity 0.25s ease-in-out;
 		opacity: 1;
+	}
+}
+
+.offers__card-container--flip {
+	perspective: 50rem;
+
+	.offers__card {
+		transition: transform 1s ease-in-out;
+		transform-style: preserve-3d;
+	}
+
+	&:hover .offers__card {
+		transform: rotateY(180deg);
+	}
+
+	.offers__card-primary {
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		transform: rotateY(0deg);
+		transform-style: preserve-3d;
+	}
+
+	.offers__card-hover {
+		transform: rotateY(180deg);
+		opacity: 1;
+
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
 	}
 }

@@ -2,9 +2,103 @@
 @use "sass:color";
 @use "sass:math";
 
+$-icon-size: 4rem;
+
 .footer {
+	background-color: $color-secondary-light;
+	padding-block: 3rem;
 }
 
-.footer__contaienr {
+.footer__container {
 	@include make-container();
+
+	display: flex;
+	flex-direction: row;
+}
+
+.footer__text-column {
+	flex: 0 0 50%;
+}
+
+.footer__logo-column {
+	flex: 0 0 50%;
+}
+
+.footer__heading {
+	color: white;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 3rem;
+	line-height: 1.1em;
+}
+
+.footer__paragraph {
+	color: $color-primary;
+	padding-block: 1rem;
+	margin-bottom: 2rem;
+}
+
+.footer__contact-item {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 0.75rem;
+}
+
+.footer__contact-item-icon {
+	position: relative;
+	z-index: 2;
+	background-color: $color-primary;
+	height: $-icon-size;
+	width: $-icon-size;
+	text-align: center;
+	border-radius: 100%;
+	font-size: 2.5rem;
+	color: $color-secondary-light;
+
+	&--phone {
+		line-height: 3.9rem;
+	}
+}
+
+.footer__contact-item-link {
+	background-color: color.scale($color-secondary, $lightness: 40%);
+	width: 16rem;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	padding: 1rem 2rem;
+	border-top-right-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+	overflow: hidden;
+
+	position: absolute;
+	z-index: 1;
+	top: math.div($-icon-size, 16);
+	left: math.div($-icon-size, 2);
+
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: calc(-100% - 5rem);
+		bottom: 0;
+		width: calc(100% + 5rem);
+		background-image: linear-gradient(
+			-45deg,
+			transparent 2.82rem,
+			$color-secondary 2.82rem
+		);
+		background-position: right center;
+		background-repeat: no-repeat;
+		transition: transform 0.5s ease-in-out;
+	}
+
+	&:hover {
+		&::after {
+			transform: translate(100%, 0);
+		}
+	}
 }

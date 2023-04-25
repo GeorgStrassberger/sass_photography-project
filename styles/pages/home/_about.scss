@@ -1,0 +1,22 @@
+@use "../../abstracts" as *;
+@use "sass:color";
+@use "sass:math";
+
+.about {
+	background-color: $color-secondary-dark;
+	padding-block: 3rem;
+}
+
+.about__img {
+	$-img-size: 30rem;
+
+	width: $-img-size;
+	height: $-img-size;
+	border-radius: math.div($-img-size, 2);
+	object-fit: cover;
+	float: left;
+}
+
+.about__text {
+	color: white;
+}

@@ -1098,4 +1098,21 @@ html {
   background-size: cover;
 }
 
+.about {
+  background-color: #011820;
+  padding-block: 3rem;
+}
+
+.about__img {
+  width: 30rem;
+  height: 30rem;
+  border-radius: 15rem;
+  object-fit: cover;
+  float: left;
+}
+
+.about__text {
+  color: white;
+}
+
 /*# sourceMappingURL=main.css.map */

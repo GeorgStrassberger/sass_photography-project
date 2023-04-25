@@ -1,0 +1,19 @@
+@use "../../abstracts" as *;
+@use "sass:color";
+@use "sass:math";
+
+.booking-modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 20000;
+	background-color: color.scale($color-secondary-dark, $alpha: -15%);
+	color: white;
+
+	&:target {
+		display: block;
+	}
+}

@@ -247,6 +247,22 @@ html {
   fill: currentColor;
 }
 
+.footer__contaienr {
+  max-width: 75rem;
+  padding: 0 2rem;
+  margin: 0px auto;
+}
+.footer__contaienr::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+@media (max-width: 62em) {
+  .footer__contaienr {
+    padding: 0 1rem;
+  }
+}
+
 .icon {
   fill: currentColor;
   height: 1em;

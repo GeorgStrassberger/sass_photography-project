@@ -2,6 +2,9 @@
 	fill: currentColor;
 	height: 1em;
 	vertical-align: middle;
-	position: relative;
-	top: -0.075em;
+
+	&:not(.icon--no-position) {
+		position: relative;
+		top: -0.075em;
+	}
 }

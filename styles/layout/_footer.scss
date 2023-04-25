@@ -6,30 +6,55 @@ $-icon-size: 4rem;
 
 .footer {
 	background-color: $color-secondary-light;
-	padding-block: 3rem;
+	padding: 3rem 0 0.5rem 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .footer__container {
-	@include make-container();
-
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
+	padding-bottom: 2rem;
+	border-bottom: 0.175rem solid rgba(255, 255, 255, 0.2);
+
+	@media (max-width: $breakpoint-sm) {
+		flex-direction: column;
+	}
 }
 
 .footer__text-column {
-	flex: 0 0 50%;
+	flex: 0 0 auto;
+	margin-right: 5rem;
+	text-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+
+	@media (max-width: $breakpoint-sm) {
+		order: 2;
+		margin-right: 0rem;
+	}
 }
 
 .footer__logo-column {
-	flex: 0 0 50%;
+	flex: 0 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@media (max-width: $breakpoint-sm) {
+		order: 1;
+		justify-content: start;
+		padding-bottom: 2rem;
+	}
 }
 
 .footer__heading {
 	color: white;
 	text-transform: uppercase;
 	font-weight: 700;
-	font-size: 3rem;
+	font-size: 3.3rem;
 	line-height: 1.1em;
+	max-width: 25rem;
 }
 
 .footer__paragraph {
@@ -94,11 +119,72 @@ $-icon-size: 4rem;
 		background-position: right center;
 		background-repeat: no-repeat;
 		transition: transform 0.5s ease-in-out;
+		will-change: transform;
 	}
 
 	&:hover {
 		&::after {
 			transform: translate(100%, 0);
 		}
+	}
+}
+
+.footer__logo-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.05em;
+	font-size: 18rem;
+	color: white;
+	background-image: linear-gradient(
+		135deg,
+		$color-primary 0%,
+		$color-secondary 100%
+	);
+	border-radius: 100%;
+
+	@media (max-width: $breakpoint-md) {
+		font-size: 12rem;
+	}
+
+	@media (max-width: $breakpoint-sm) {
+		font-size: 6rem;
+	}
+}
+
+.footer__logo-icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.1em;
+	border: 0.025em solid white;
+	border-radius: 100%;
+}
+
+.footer__footer {
+}
+
+.footer__footer-list {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.footer__footer-link {
+	display: inline-block;
+	color: rgba(255, 255, 255, 0.5);
+	text-decoration: none;
+	padding: 0.5rem 1.5rem;
+	white-space: nowrap;
+	transition: color 0.25s ease-in-out;
+
+	&:hover {
+		color: rgba(255, 255, 255, 0.75);
+	}
+
+	@media (max-width: $breakpoint-xs) {
+		padding: 0.5rem 0.5rem;
 	}
 }

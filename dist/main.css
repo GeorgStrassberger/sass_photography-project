@@ -1430,7 +1430,6 @@ html {
 }
 
 .booking-modal {
-  display: none;
   position: fixed;
   top: 0;
   right: 0;
@@ -1439,9 +1438,38 @@ html {
   z-index: 20000;
   background-color: rgba(1, 24, 32, 0.85);
   color: white;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 .booking-modal:target {
+  display: flex;
+}
+
+.booking-modal__content {
+  position: relative;
+  height: 20rem;
+  width: 40rem;
+  background-image: linear-gradient(95.7391704773deg, transparent 32.9%, rgba(64, 118, 130, 0.85) 33.1%), linear-gradient(90deg, transparent 33%, rgba(255, 255, 255, 0.5) 100%), url("../assets/images/modal/pexels-david-bartus-610293.jpg");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: center center, center center, center 30%;
+  background-size: auto, auto, cover;
+}
+
+.booking-modal__close {
   display: block;
+  height: 1rem;
+  width: 1rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: transparent;
+  border-radius: 100%;
+  filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.5));
+  background-image: linear-gradient(-45deg, transparent 44%, rgb(0, 226, 156) 45%, rgb(0, 226, 156) 55%, transparent 56%), linear-gradient(45deg, transparent 44%, rgb(0, 226, 156) 45%, rgb(0, 226, 156) 55%, transparent 56%);
+}
+.booking-modal__close:hover {
+  opacity: 0.7;
 }
 
 /*# sourceMappingURL=main.css.map */

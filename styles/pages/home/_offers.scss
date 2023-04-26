@@ -267,13 +267,13 @@ $-width-md: math.div(100%, 2);
 	perspective: 50rem;
 
 	.offers__card {
-		transition: transform 0.5s ease-in-out;
+		transition: transform 0.1s ease-in-out;
 		transform: rotateX(calc(calc(var(--mouse-y, 0.5) - 0.5) * -20deg))
 			rotateY(calc(calc(var(--mouse-x, 0.5) - 0.5) * 20deg));
 	}
 
 	&:hover {
-		transition: transform 0.1s linear;
+		transition: transform 0.5s linear;
 	}
 }
 

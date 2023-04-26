@@ -1328,11 +1328,11 @@ select {
   perspective: 50rem;
 }
 .offers__card-contaienr--3d-hover .offers__card, .offers__card-contaienr--3d .offers__card {
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.1s ease-in-out;
   transform: rotateX(calc((var(--mouse-y, 0.5) - 0.5) * -20deg)) rotateY(calc((var(--mouse-x, 0.5) - 0.5) * 20deg));
 }
 .offers__card-contaienr--3d-hover:hover, .offers__card-contaienr--3d:hover {
-  transition: transform 0.1s linear;
+  transition: transform 0.5s linear;
 }
 
 .offers__card-contaienr--3d .offers__card-hover {

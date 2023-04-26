@@ -61,7 +61,6 @@ $-booking-modal-width: 45rem;
 	width: $-booking-modal-width;
 	max-width: 100vw;
 	max-height: 100vh;
-	overflow: auto;
 
 	border-radius: 0.25rem;
 
@@ -88,6 +87,10 @@ $-booking-modal-width: 45rem;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in-out;
 	animation-fill-mode: backwards;
+
+	@media (max-width: $breakpoint-sm) {
+		overflow: auto;
+	}
 }
 
 @keyframes booking-modal__content--fade-in {

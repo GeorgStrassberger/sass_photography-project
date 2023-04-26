@@ -14,6 +14,9 @@
 	</head>
 
 	<body>
+		<!-- Sidenav -->
+		<input class="sidenav__opened" id="sidenav__opened" type="checkbox" autocomplete="off">
+		<!-- Header -->
 		<header class="header">
 			<div class="header__container">
 				<nav class="navigation">
@@ -57,7 +60,7 @@
 							<a class="navigation__list-item-link" href="#">Plan your photos</a>
 						</li>
 						<li class="navigation__list-item navigation__list-item--menu">
-							<a class="navigation__list-item-link" href="#">
+							<label class="navigation__list-item-link" for="sidenav__opened">
 								<svg class="icon" viewBox="0 0 512 512">
 									<g>
 										<path d="M358.06,193.61H153.94c-3.83,0-6.93-3.1-6.93-6.93s3.1-6.93,6.93-6.93h204.13c3.83,0,6.93,3.1,6.93,6.93
@@ -71,7 +74,7 @@
                                             S143.02,460.9,256,460.9S460.9,368.98,460.9,256S368.98,51.1,256,51.1z" />
 									</g>
 								</svg>
-							</a>
+							</label>
 						</li>
 					</ul>
 				</nav>
@@ -397,7 +400,7 @@
 					</p>
 				</div>
 				<div class="story__book">
-					<a class="button button--white" href="#booking-modal">Book now</a>
+					<a class="button button--white" href="#booking-modal">Jetzt Buchen!</a>
 				</div>
 			</div>
 		</section>
@@ -647,33 +650,32 @@
 			</div>
 		</section>
 		<!-- About  -->
-		<section>
-			<div class="about">
-				<div class="container">
-					<div class="about__slideshow">
-						<img class="about__img" src="./assets/images/about/pexels-arun-thomas-2093578.jpg">
-						<img class="about__img about__img--slideshow  about__img--slideshow-1"
-							src="./assets/images/about/pexels-fujifilm-north-america-3497183.jpg">
-						<img class="about__img about__img--slideshow about__img--slideshow-2"
-							src="./assets/images/about/pexels-kaique-rocha-598917.jpg">
-						<img class="about__img about__img--slideshow about__img--slideshow-3"
-							src="./assets/images/about/pexels-matt-hardy-2179205.jpg">
-					</div>
-					<div class="about__text">
-						<h3 class="about__heading">Über mich</h3>
-						<p class="about__paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente labore nemo
-							aspernatur natus asperiores harum itaque et, perferendis deserunt culpa distinctio tempora odio laboriosam
-							placeat vero! Veritatis explicabo molestias fugit.</p>
-						<p class="about__paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente labore nemo
-							aspernatur natus asperiores harum itaque et, perferendis deserunt culpa distinctio tempora odio laboriosam
-							placeat vero! Veritatis explicabo molestias fugit.</p>
-						<blockquote class="about__quote">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse odio sequi
-							eligendi tempore?
-							Sunt, assumenda iste? Iste placeat accusamus, error laborum unde adipisci! Ad ea veritatis modi provident
-							omnis enim.</blockquote>
-					</div>
+		<section class="about">
+			<div class="container">
+				<div class="about__slideshow">
+					<img class="about__img" src="./assets/images/about/pexels-arun-thomas-2093578.jpg">
+					<img class="about__img about__img--slideshow  about__img--slideshow-1"
+						src="./assets/images/about/pexels-fujifilm-north-america-3497183.jpg">
+					<img class="about__img about__img--slideshow about__img--slideshow-2"
+						src="./assets/images/about/pexels-kaique-rocha-598917.jpg">
+					<img class="about__img about__img--slideshow about__img--slideshow-3"
+						src="./assets/images/about/pexels-matt-hardy-2179205.jpg">
+				</div>
+				<div class="about__text">
+					<h3 class="about__heading">Über mich</h3>
+					<p class="about__paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente labore nemo
+						aspernatur natus asperiores harum itaque et, perferendis deserunt culpa distinctio tempora odio laboriosam
+						placeat vero! Veritatis explicabo molestias fugit.</p>
+					<p class="about__paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente labore nemo
+						aspernatur natus asperiores harum itaque et, perferendis deserunt culpa distinctio tempora odio laboriosam
+						placeat vero! Veritatis explicabo molestias fugit.</p>
+					<blockquote class="about__quote">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse odio sequi
+						eligendi tempore?
+						Sunt, assumenda iste? Iste placeat accusamus, error laborum unde adipisci! Ad ea veritatis modi provident
+						omnis enim.</blockquote>
 				</div>
 			</div>
+
 		</section>
 		<!-- Contact / Footer -->
 		<section class="footer">
@@ -806,8 +808,32 @@
 				</form>
 			</div>
 		</section>
-
-
+		<!-- Sidenav -->
+		<section class="sidenav">
+			<label class="sidenav__background" for="sidenav__opened"></label>
+			<div class="sidenav__container">
+				<label class="sidenav__close" for="sidenav__opened">x</label>
+				<nav>
+					<ul class="sidenav__nav">
+						<li>
+							<a class="sidenav__nav-link" href="#">Startseite</a>
+						</li>
+						<li>
+							<a class="sidenav__nav-link" href="#">Kontakt</a>
+						</li>
+						<li>
+							<a class="sidenav__nav-link" href="#">Über uns</a>
+						</li>
+						<li>
+							<a class="sidenav__nav-link" href="#">Impressum</a>
+						</li>
+						<li>
+							<a class="sidenav__nav-link" href="#">Datenschutzerklärung</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</section>
 	</body>
 
 </html>

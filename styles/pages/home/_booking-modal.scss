@@ -2,7 +2,7 @@
 @use "sass:color";
 @use "sass:math";
 
-$-booking-modal-height: 25rem;
+$-booking-modal-height: 23rem;
 $-booking-modal-width: 45rem;
 
 .booking-modal {
@@ -12,7 +12,7 @@ $-booking-modal-width: 45rem;
 	bottom: 0;
 	left: 0;
 	z-index: 20000;
-	background-color: color.scale($color-secondary-dark, $alpha: -15%);
+	background-color: rgba(0, 0, 0, 0.85);
 	color: white;
 
 	display: none;
@@ -43,6 +43,7 @@ $-booking-modal-width: 45rem;
 	background-repeat: no-repeat, no-repeat, no-repeat;
 	background-position: center center, center center, center 30%;
 	background-size: auto, auto, cover;
+	box-shadow: 0 0 1rem black;
 }
 
 .booking-modal__close {
@@ -78,9 +79,22 @@ $-booking-modal-width: 45rem;
 }
 
 .booking-modal__heading {
-	margin-bottom: 1.5rem;
+	margin-bottom: 0.35rem;
 	padding-top: 3rem;
 	color: white;
 	font-size: 1.5rem;
 	font-weight: 500;
+	text-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+
+.booking-modal__paragraph {
+	font-weight: 250;
+	margin-bottom: 1rem;
+	text-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+
+.booking-modal__submit-container {
+	text-align: right;
+	margin-top: 1rem;
+	margin-right: 1.5rem;
 }

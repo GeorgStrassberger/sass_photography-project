@@ -476,6 +476,19 @@ select {
   padding-inline: 2rem;
 }
 
+.button--form {
+  font-weight: normal;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  color: black;
+  background-color: rgb(0, 226, 156);
+  border: 0.125rem solid rgb(0, 226, 156);
+  text-transform: none;
+}
+.button--form:hover {
+  color: rgb(50, 50, 50);
+}
+
 .form__horizontal {
   display: flex;
   flex-direction: row;
@@ -539,6 +552,7 @@ select {
   font-size: 1rem;
   padding-top: 0.1rem;
   padding-left: 0.25rem;
+  text-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
 }
 
 .form__radio-item--white .form__radio-item-radio {
@@ -1529,7 +1543,7 @@ select {
   bottom: 0;
   left: 0;
   z-index: 20000;
-  background-color: rgba(1, 24, 32, 0.85);
+  background-color: rgba(0, 0, 0, 0.85);
   color: white;
   display: none;
   justify-content: center;
@@ -1541,13 +1555,14 @@ select {
 
 .booking-modal__content {
   position: relative;
-  height: 25rem;
+  height: 23rem;
   width: 45rem;
   padding-left: 16.875rem;
   background-image: linear-gradient(95.7391704773deg, transparent 32.9%, rgba(64, 118, 130, 0.85) 33.1%), linear-gradient(90deg, transparent 33%, rgba(255, 255, 255, 0.5) 100%), url("../assets/images/modal/pexels-david-bartus-610293.jpg");
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: center center, center center, center 30%;
   background-size: auto, auto, cover;
+  box-shadow: 0 0 1rem black;
 }
 
 .booking-modal__close {
@@ -1567,11 +1582,24 @@ select {
 }
 
 .booking-modal__heading {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.35rem;
   padding-top: 3rem;
   color: white;
   font-size: 1.5rem;
   font-weight: 500;
+  text-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+
+.booking-modal__paragraph {
+  font-weight: 250;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+
+.booking-modal__submit-container {
+  text-align: right;
+  margin-top: 1rem;
+  margin-right: 1.5rem;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -42,3 +42,17 @@
 .button--slim {
 	padding-inline: 2rem;
 }
+
+.button--form {
+	font-weight: normal;
+	font-size: 1rem;
+	padding: 0.75rem 1rem;
+	color: black;
+	background-color: $color-primary;
+	border: 0.125rem solid $color-primary;
+	text-transform: none;
+
+	&:hover {
+		color: rgb(50, 50, 50);
+	}
+}

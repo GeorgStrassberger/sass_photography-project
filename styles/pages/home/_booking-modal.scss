@@ -6,21 +6,45 @@ $-booking-modal-height: 23rem;
 $-booking-modal-width: 45rem;
 
 .booking-modal {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 20000;
-	background-color: rgba(0, 0, 0, 0.85);
-	color: white;
-
 	display: none;
 	justify-content: center;
 	align-items: center;
 
 	&:target {
 		display: flex;
+	}
+
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 20000;
+	color: white;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background-color: rgba(0, 0, 0, 0.85);
+
+		animation-name: booking-modal--fade-in;
+		animation-duration: 1s;
+		animation-timing-function: ease-in-out;
+		animation-delay: 0s;
+		animation-iteration-count: 1;
+	}
+}
+
+@keyframes booking-modal--fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }
 
@@ -40,10 +64,27 @@ $-booking-modal-width: 45rem;
 		),
 		linear-gradient(90deg, transparent 33%, rgba(255, 255, 255, 0.5) 100%),
 		url("../assets/images/modal/pexels-david-bartus-610293.jpg");
+	background-color: rgb(127, 127, 127);
 	background-repeat: no-repeat, no-repeat, no-repeat;
 	background-position: center center, center center, center 30%;
 	background-size: auto, auto, cover;
 	box-shadow: 0 0 1rem black;
+
+	animation: booking-modal__content--fade-in;
+	animation-duration: 1s;
+	animation-delay: 1s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: backwards;
+}
+
+@keyframes booking-modal__content--fade-in {
+	0% {
+		transform: translate(0, calc(-50vh - 50%));
+	}
+	100% {
+		transform: translate(0, 0);
+	}
 }
 
 .booking-modal__close {

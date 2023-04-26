@@ -2,6 +2,9 @@
 @use "sass:color";
 @use "sass:math";
 
+$-booking-modal-height: 25rem;
+$-booking-modal-width: 45rem;
+
 .booking-modal {
 	position: fixed;
 	top: 0;
@@ -24,8 +27,9 @@
 .booking-modal__content {
 	position: relative;
 
-	height: 20rem;
-	width: 40rem;
+	height: $-booking-modal-height;
+	width: $-booking-modal-width;
+	padding-left: $-booking-modal-width * 0.375;
 
 	$modal-content-bg: color.scale($color-secondary-light, $alpha: -15%);
 
@@ -71,4 +75,12 @@
 	&:hover {
 		opacity: 0.7;
 	}
+}
+
+.booking-modal__heading {
+	margin-bottom: 1.5rem;
+	padding-top: 3rem;
+	color: white;
+	font-size: 1.5rem;
+	font-weight: 500;
 }

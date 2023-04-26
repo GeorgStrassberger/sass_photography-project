@@ -1,0 +1,112 @@
+@use "../abstracts" as *;
+@use "sass:color";
+@use "sass:math";
+
+$-form__input-padding: 0.75rem 1rem;
+$-form__input-border-size: 0.125rem;
+
+.form__horizontal {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.form__group {
+	position: relative;
+	margin-bottom: 1.5rem;
+
+	.form__horizontal > & {
+		margin-right: 1.5rem;
+		margin-bottom: 1rem;
+	}
+}
+
+.form__input {
+	color: $color-primary;
+	background-color: transparent;
+	width: 12.5rem;
+	padding: $-form__input-padding;
+	border: $-form__input-border-size solid $color-primary;
+	border-radius: 100rem;
+	font-size: 1rem;
+	font-family: inherit;
+	text-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+
+	&:focus {
+		outline: none;
+	}
+
+	&::placeholder {
+		color: transparent;
+	}
+}
+
+.form__label {
+	position: absolute;
+	top: $-form__input-border-size;
+	left: 0;
+	margin: $-form__input-padding;
+	color: $color-primary;
+	font-size: 1rem;
+	text-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+
+	transform-origin: 0% 50%;
+	transform: scale(1) translate(0, 0);
+	will-change: transform;
+	transition: transform 0.25s ease-in-out;
+
+	.form__input:focus ~ &,
+	.form__input[placeholder]:not(:placeholder-shown) ~ & {
+		transform: scale(0.75) translate(0.4rem, 2.7rem);
+	}
+}
+
+.form__radio-item-radio {
+	display: inline-block;
+	position: relative;
+	top: -0.125rem;
+}
+
+.form__radio-item-label {
+	display: inline-block;
+	color: $color-primary;
+	font-size: 1rem;
+	padding-top: 0.1rem;
+	padding-left: 0.25rem;
+
+	// .form__radio-item-radio:checked ~ & {
+	// 	font-weight: bold;
+	// }
+}
+
+.form__radio-item--white {
+	.form__radio-item-radio {
+		display: none;
+	}
+
+	.form__radio-item-label::before {
+		content: "";
+		position: relative;
+		top: 0.25em;
+		display: inline-block;
+		width: 0.9em;
+		height: 0.9em;
+		border: 0.175em solid white;
+		border-radius: 100%;
+		margin-right: 0.5em;
+		background-image: radial-gradient(
+			circle at center center,
+			white 49%,
+			transparent 51%
+		);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 0 0;
+		transition: background-size 0.2s ease-in-out;
+	}
+
+	.form__radio-item-radio:checked ~ .form__radio-item-label::before {
+		background-size: 100% 100%;
+	}
+}

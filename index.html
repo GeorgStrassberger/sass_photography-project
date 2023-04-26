@@ -771,9 +771,37 @@
 		<section id="booking-modal" class="booking-modal">
 			<div class="booking-modal__content">
 				<a class="booking-modal__close" href="#">x</a>
+				<h3 class="booking-modal__heading">Buchungsanfrage stellen!</h3>
+				<!-- Form -->
+				<form class="form" action="#">
+					<div class="form__horizontal">
+						<!-- Name -->
+						<div class="form__group">
+							<input class="form__input" id="booking-modal-name" type="text" placeholder="Name">
+							<label class="form__label" for="booking-modal-name">Name</label>
+						</div>
+						<!-- E-Mail -->
+						<div class="form__group">
+							<input class="form__input" id="booking-modal-email" type="email" placeholder="E-Mail">
+							<label class="form__label" for="booking-modal-email">E-Mail</label>
+						</div>
+					</div>
+
+					<div class="form__radio-group">
+						<div class="form__radio-item form__radio-item--white">
+							<input class="form__radio-item-radio" type="radio" name="type" id="booking-modal-type-private"
+								value="private">
+							<label class="form__radio-item-label" for="booking-modal-type-private">Private Tour buchen</label>
+						</div>
+						<div class="form__radio-item form__radio-item--white">
+							<input class="form__radio-item-radio" type="radio" name="type" id="booking-modal-type-group"
+								value="group">
+							<label class="form__radio-item-label" for="booking-modal-type-group">Gruppentour buchen</label>
+						</div>
+					</div>
+
+				</form>
 			</div>
-
-
 		</section>
 
 

@@ -91,6 +91,13 @@ $-booking-modal-width: 45rem;
 	@media (max-width: $breakpoint-sm) {
 		overflow: auto;
 	}
+
+	@media (max-width: $breakpoint-xs) {
+		padding-left: 1rem;
+		height: 27rem;
+		background-color: $color-secondary-light;
+		background-image: none;
+	}
 }
 
 @keyframes booking-modal__content--fade-in {

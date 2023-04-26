@@ -10,16 +10,19 @@ $color-secondary-light: color.scale($color-secondary, $lightness: 20%) !default;
 $slope-incline: math.asin(0.1); //0.1 = 10%
 
 /** 1200px oder schmaler */
-$breakpoint-lg: 75em;
+$breakpoint-lg: 75em !default;
 
 /** 992px oder schmaler */
-$breakpoint-md: 62em;
+$breakpoint-md: 62em !default;
 
 /** 768px oder schmaler */
-$breakpoint-sm: 48em;
+$breakpoint-sm: 48em !default;
 
 /** 576px oder schmaler */
-$breakpoint-xs: 36em;
+$breakpoint-xs: 36em !default;
+
+/** 400px oder schmaler */
+$breakpoint-xxs: 25em !default;
 
 /** Breakpoints */
 @media (max-width: $breakpoint-lg) {
@@ -29,4 +32,6 @@ $breakpoint-xs: 36em;
 @media (max-width: $breakpoint-sm) {
 }
 @media (max-width: $breakpoint-xs) {
+}
+@media (max-width: $breakpoint-xxs) {
 }

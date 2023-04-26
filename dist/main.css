@@ -13,6 +13,12 @@
   font-display: swap;
   src: url("../../assets/fonts/jost/Jost-Italic-VariableFont_wght.woff2") format("woff2");
 }
+/** 1200px oder schmaler */
+/** 992px oder schmaler */
+/** 768px oder schmaler */
+/** 576px oder schmaler */
+/** 400px oder schmaler */
+/** Breakpoints */
 * {
   margin: 0;
   padding: 0;
@@ -23,17 +29,42 @@ html {
   font-size: 100%;
   font-family: "Jost", sans-serif;
 }
+@media (min-width: 100em) {
+  html {
+    font-size: 133%;
+  }
+}
+@media (min-width: 133em) {
+  html {
+    font-size: 166%;
+  }
+}
+@media (min-width: 166em) {
+  html {
+    font-size: 200%;
+  }
+}
+@media (max-width: 25em) {
+  html {
+    font-size: 75%;
+  }
+}
 
 input,
 select {
   font-family: inherit;
 }
 
-/** 1200px oder schmaler */
-/** 992px oder schmaler */
-/** 768px oder schmaler */
-/** 576px oder schmaler */
-/** Breakpoints */
+::-moz-selection {
+  color: white;
+  background-color: rgba(38, 70, 77, 0.8);
+}
+
+::selection {
+  color: white;
+  background-color: rgba(38, 70, 77, 0.8);
+}
+
 .container {
   max-width: 75rem;
   padding: 0 2rem;
@@ -885,7 +916,7 @@ select {
 }
 
 .tours__card {
-  flex: 0 0 14.2rem;
+  flex: 0 0 20%;
   margin-top: 3rem;
   height: 21rem;
   position: relative;
@@ -894,6 +925,11 @@ select {
   transform: scale(1);
   transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out, z-index 0.25s linear;
   z-index: 0;
+}
+@media (max-width: 75em) {
+  .tours__card {
+    flex: 0 0 14.2rem;
+  }
 }
 .tours__card:hover {
   transform: scale(1.1);
@@ -1091,9 +1127,16 @@ select {
   margin-left: -0.66rem;
   margin-right: -0.66rem;
 }
+@media (max-width: 48em) {
+  .offers__container {
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-direction: column;
+  }
+}
 
 .offers__card-container {
-  width: calc(33.3333333333% - 1.321rem);
+  width: calc(33.3333333333% - 1.42rem);
   margin-top: 1.32rem;
   margin-right: 0.66rem;
   margin-bottom: 0;
@@ -1101,19 +1144,18 @@ select {
 }
 @media (max-width: 62em) {
   .offers__card-container {
-    width: calc(50% - 1.321rem);
+    width: calc(50% - 1.42rem);
   }
 }
 @media (max-width: 48em) {
   .offers__card-container {
-    width: calc(
-			100% - 50% - 1.321rem
-		);
+    width: calc(100% - 50% - 1.42rem);
   }
 }
 
 .offers__card {
   position: relative;
+  min-width: 16rem;
   box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.5);
 }
 
@@ -1194,12 +1236,6 @@ select {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-@media (max-width: 48em) {
-  .offers__content-heading {
-    white-space: normal;
-    text-overflow: initial;
-  }
-}
 
 .offers__content-subheading {
   color: rgb(0, 226, 156);
@@ -1225,7 +1261,7 @@ select {
 }
 
 .offers__content-info--text {
-  padding-left: 0.25rem;
+  padding-left: 0.33rem;
 }
 
 .offers__content-price-container {
@@ -1259,9 +1295,9 @@ select {
   background-position: center top, center center;
   background-size: 100% calc(50% - 4rem), 100% 100%;
   opacity: 0;
+  transition: opacity 0.25s ease-in-out;
 }
 .offers__card:hover .offers__card-hover {
-  transition: opacity 0.25s ease-in-out;
   opacity: 1;
 }
 
@@ -1292,11 +1328,11 @@ select {
   perspective: 50rem;
 }
 .offers__card-contaienr--3d-hover .offers__card, .offers__card-contaienr--3d .offers__card {
-  transition: transform 0.1s ease-in-out;
+  transition: transform 0.5s ease-in-out;
   transform: rotateX(calc((var(--mouse-y, 0.5) - 0.5) * -20deg)) rotateY(calc((var(--mouse-x, 0.5) - 0.5) * 20deg));
 }
 .offers__card-contaienr--3d-hover:hover, .offers__card-contaienr--3d:hover {
-  transition: transform 0.5s linear;
+  transition: transform 0.1s linear;
 }
 
 .offers__card-contaienr--3d .offers__card-hover {
@@ -1695,6 +1731,14 @@ select {
 @media (max-width: 48em) {
   .booking-modal__content {
     overflow: auto;
+  }
+}
+@media (max-width: 36em) {
+  .booking-modal__content {
+    padding-left: 1rem;
+    height: 27rem;
+    background-color: #407682;
+    background-image: none;
   }
 }
 
